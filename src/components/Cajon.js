@@ -5,7 +5,7 @@ import { Drawer, Divider, Toolbar } from "@material-ui/core";
 
 import IconButton from "@material-ui/core/IconButton";
 
-import BottomRF from './dashboard/BottomRF'
+
 
 
 import {  Hidden } from "@material-ui/core";
@@ -66,7 +66,7 @@ const Cajon = (props) => {
         
         <Divider />
        
-        <BottomRF />
+        
       </Drawer>
       </Hidden>
     </div>
