@@ -6,19 +6,16 @@ import DialogContent from '@material-ui/core/DialogContent';
 import { withStyles } from '@material-ui/core/styles';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { red } from '@material-ui/core/colors'
-
 const BootstrapButton = withStyles({
     root: {
       boxShadow: 'none',
       textTransform: 'none',
       fontSize: 16,
-      padding: '2px 15px',
-      
-      
+      padding: '6px 12px',
       border: '1px solid',
       lineHeight: 1.5,
-      backgroundColor: '#9a8171',
-      borderColor: '#9a8171',
+      backgroundColor: '#c68251',
+      borderColor: '#c68251',
       fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',
@@ -32,21 +29,58 @@ const BootstrapButton = withStyles({
         '"Segoe UI Symbol"',
       ].join(','),
       '&:hover': {
-        backgroundColor: '#9a8171',
-        borderColor: '#9a8171',
+        backgroundColor: '#c68251',
+        borderColor: '#c68251',
         boxShadow: 'none',
       },
       '&:active': {
         boxShadow: 'none',
-        backgroundColor: '#9a8171',
-        borderColor: '#9a8171',
+        backgroundColor: '#c68251',
+        borderColor: '#c68251',
       },
       '&:focus': {
-        boxShadow: '0 0 0 0.2rem #9a8171',
+        boxShadow: '0 0 0 0.2rem #c68251',
       },
     },
   })(Button);
-  
+  const BootstrappButton = withStyles({
+    root: {
+      boxShadow: 'none',
+      textTransform: 'none',
+      fontSize: 16,
+      padding: '6px 12px',
+      border: '1px solid',
+      lineHeight: 1.5,
+      backgroundColor: '#ff0003',
+      borderColor: '#ff0003',
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+      '&:hover': {
+        backgroundColor: '#ff0003',
+        borderColor: '#ff0003',
+        boxShadow: 'none',
+      },
+      '&:active': {
+        boxShadow: 'none',
+        backgroundColor: '#ff0003',
+        borderColor: '#ff0003',
+      },
+      '&:focus': {
+        boxShadow: '0 0 0 0.2rem #ff0003',
+      },
+    },
+  })(Button);
+ 
 const theme = createTheme({
   palette: {
     primary:{
@@ -97,14 +131,15 @@ const Modalprim = () =>{
        
         <DialogActions>
         
-        <Button variant="contained" color="secondary" href="/primaria" >
-                     Continuar
-                   </Button>
+        <BootstrapButton variant="contained" href="primaria" color="primary"
+style={{ color: '#fff'}} >
+        CONTINUAR
+                   </BootstrapButton>
                    <ThemeProvider theme={theme}>
                    
-                   <Button variant="contained" color="primary"  onClick={handleClose} autoFocus>
-            Cancelar
-          </Button>
+                   <BootstrappButton variant="contained" color="secondary"  onClick={handleClose} autoFocus>
+            CANCELAR
+          </BootstrappButton>
           </ThemeProvider>
         </DialogActions>
       </Dialog>

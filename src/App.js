@@ -7,12 +7,15 @@ import theme from "./components/ThemeConfig";
 
 import Contenedor from "./components/Contenedor";
 
+import Primaria from "./components/Primaria";
 function App() {
   return (
     <ThemeProvider theme={theme}>
       
     <Router>
       <Route path="/" exact component={Contenedor} />
+
+      <Route path="/primaria" exact component={Primaria} />
     </Router>
     </ThemeProvider>
   );
