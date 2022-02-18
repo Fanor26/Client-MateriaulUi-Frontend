@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 
 import { Hidden } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ModalEntrar from "./Modals/ModalEntrar";
 
 const estilos = makeStyles((theme) => ({
   root: {
@@ -54,6 +55,7 @@ const Cajon = (props) => {
           </Toolbar>
 
           <Divider />
+          <ModalEntrar />
         </Drawer>
       </Hidden>
     </div>
