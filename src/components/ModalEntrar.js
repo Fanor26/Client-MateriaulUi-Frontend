@@ -1,4 +1,5 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -9,11 +10,76 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 
+import { Hidden} from '@material-ui/core';
+import FormControl from '@material-ui/core/FormControl';
+
+const BootstrapButton = withStyles({
+  root: {
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    padding: '6px 40px',
+    
+    marginBottom: '5px',
+    border: '1px solid',
+    lineHeight: 1.5,
+    backgroundColor: '#0063cc',
+    borderColor: '#0063cc',
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:hover': {
+      backgroundColor: '#0069d9',
+      borderColor: '#0062cc',
+      boxShadow: 'none',
+    },
+    '&:active': {
+      boxShadow: 'none',
+      backgroundColor: '#0062cc',
+      borderColor: '#005cbf',
+    },
+    '&:focus': {
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+    },
+  },
+})(Button);
+
+const useStyles = makeStyles((theme) => ({
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    margin: 'auto',
+    width: 'fit-content',
+  },
+  formControl: {
+    marginTop: theme.spacing(2),
+    minWidth: 120,
+  },
+  formControlLabel: {
+    marginTop: theme.spacing(1),
+
+  },
+  button: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(-2)
+  },
+}));
+
 const styles = (theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
   },
+  
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
@@ -49,46 +115,65 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-const ModalEntrar =  () => {
+const ModalEntrar = () => {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+  const [scroll, setScroll] = React.useState();
+
+  
+  
+  const handleClickOpen = (scrollType) => () => {
     setOpen(true);
+    setScroll(scrollType);
   };
+
   const handleClose = () => {
     setOpen(false);
   };
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        ESTUDIANTES
-      </Button>
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+      
+      <BootstrapButton className={classes.button} variant="contained" color="primary" onClick={handleClickOpen('body')}>
+     ESTUDIANTES
+      </BootstrapButton>
+      
+      <Dialog 
+     
+      aria-labelledby="customized-dialog-title" 
+      open={open}
+      scroll={scroll}
+      >
+<Hidden>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Exclusivo para Miembros
+        Exclusivo para miembros 
         </DialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+           Todo lo que hay aqui esta diseñado para hacerte mejor!!!
           </Typography>
+          
           <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-            lacus vel augue laoreet rutrum faucibus dolor auctor.
+          Comience con un excelente proceso de registro
           </Typography>
+         
           <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-            auctor fringilla.
+          <form className={classes.form} noValidate>
+            <FormControl className={classes.formControl}>
+             
+              
+            </FormControl>
+            
+          </form>
           </Typography>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
-            Save changes
-          </Button>
+          
         </DialogActions>
+        </Hidden>
       </Dialog>
+      
     </div>
   );
 }
