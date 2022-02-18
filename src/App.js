@@ -16,9 +16,7 @@ import Contenedor from './components/Contenedor'
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./components/ThemeConfig";
 
-import Inicial from './components/Inicial'
-import Primaria from './components/Primaria'
-import Secundaria from './components/Secundaria'
+
 
 
 
