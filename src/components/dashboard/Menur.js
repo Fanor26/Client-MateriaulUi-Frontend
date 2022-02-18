@@ -6,9 +6,9 @@ import {ExpandLess, ExpandMore } from  '@material-ui/icons';
 import Button from '@material-ui/core/Button';
 
 
-import Modali from "./Modali"
+
 import Modalp from "./Modalp"
-import Modals from "./Modals"
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -56,15 +56,11 @@ const Menur= () => {
                    
        
            
-                    <ListItem  className={classes.nested}> 
-       <Modali />
-       </ListItem>
+                
        <ListItem  className={classes.nested}> 
        <Modalp />
        </ListItem>
-       <ListItem  className={classes.nested}> 
-       <Modals />
-       </ListItem>
+      
          
                    
 
