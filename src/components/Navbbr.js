@@ -31,9 +31,10 @@ const Navbbr = (props) => {
                 <Typography variant="h6" className={classes.title} >
            JESÚS DE NAZARETH 
           </Typography >
-
+          <Hidden smDown >
           
 <ModalEntrar />
+</Hidden>
                             <Hidden only={['md', 'lg']} >
           <IconButton variant="contained" aria-label="menu" onClick={() => props.accionAbrir()} >
             <MenuIcon />
