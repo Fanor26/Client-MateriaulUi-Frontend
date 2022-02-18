@@ -40,7 +40,7 @@ const Navbar =(props) => {
           <Hidden smDown >
           
         
-        <BottomRF />
+       
        
           </Hidden>
 

@@ -33,32 +33,6 @@ function App() {
     <Route   path='/' exact component={Contenedor}/>
 
   
-
-    
-
-
-
-    
-    
-
-    
-    
-  
-    
-    
-
-
-   
-
-
-   
-    
-    
-    <Route   path='/inicial' exact component={Inicial}/>
-    <Route   path='/primaria' exact component={Primaria}/>
-    <Route   path='/secundaria' exact component={Secundaria}/>
-
-
    
     </Router>
     </ThemeProvider>
