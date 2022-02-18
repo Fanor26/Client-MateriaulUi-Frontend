@@ -32,11 +32,7 @@ const Navbbr = (props) => {
            JESÚS DE NAZARETH 
           </Typography >
 
-          <Hidden smDown >
           
-        
-        
-          </Hidden>
 
                             <Hidden only={['md', 'lg']} >
           <IconButton variant="contained" aria-label="menu" onClick={() => props.accionAbrir()} >
