@@ -34,7 +34,7 @@ const Navbbr = (props) => {
       <AppBar elevation={20} color="contained">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            JESÚS DE NAZARETH
+           MANUEL BELGRANO 2 "A" PRIMARIA
           </Typography>
           <Hidden smDown>
             <ModalEntrar />
