@@ -10,9 +10,9 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import Menur from './Menur'
-import {Grid, Hidden} from '@material-ui/core';
+import { Hidden} from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 const BootstrapButton = withStyles({
   root: {
     boxShadow: 'none',
