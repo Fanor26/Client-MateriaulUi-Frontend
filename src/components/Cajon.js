@@ -2,15 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Drawer, Divider, Toolbar } from "@material-ui/core";
 
-
 import IconButton from "@material-ui/core/IconButton";
 
-
-
-
-import {  Hidden } from "@material-ui/core";
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-
+import { Hidden } from "@material-ui/core";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const estilos = makeStyles((theme) => ({
   root: {
@@ -33,7 +28,6 @@ const estilos = makeStyles((theme) => ({
   drawerPaper: {
     width: 210,
   },
-  
 }));
 
 const Cajon = (props) => {
@@ -41,33 +35,26 @@ const Cajon = (props) => {
 
   return (
     <div className={classes.root}>
-      <Hidden only={['md', 'lg']} >
-      <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-        anchor="right"
-        variant={props.variant}
-        open={props.open}
-        onClose={props.onClose ? props.onClose : null}
-      >
-       
-       <Toolbar>
-          
-            <IconButton edge="start" onClick={props.onClose} color="contained" >
+      <Hidden only={["md", "lg"]}>
+        <Drawer
+          className={classes.drawer}
+          variant="permanent"
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+          anchor="right"
+          variant={props.variant}
+          open={props.open}
+          onClose={props.onClose ? props.onClose : null}
+        >
+          <Toolbar>
+            <IconButton edge="start" onClick={props.onClose} color="contained">
               <ArrowForwardIosIcon />
             </IconButton>
-            
-            </Toolbar>
+          </Toolbar>
 
-         
-        
-        <Divider />
-       
-       
-      </Drawer>
+          <Divider />
+        </Drawer>
       </Hidden>
     </div>
   );
