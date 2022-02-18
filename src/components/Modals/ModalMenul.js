@@ -25,6 +25,7 @@ const ModalMenul = () => {
   };
 
   return (
+      <>
     <List
       component="nav"
       aria-labelledby="nested-list-subheader"
@@ -39,7 +40,8 @@ const ModalMenul = () => {
         <List component="div">fanor</List>
       </Collapse>
     </List>
+    </>
   );
 };
 
-export default ModalMenul;
+export default ModalMenul
