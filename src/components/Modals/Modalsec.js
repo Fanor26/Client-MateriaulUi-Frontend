@@ -14,11 +14,11 @@ const BootstrapButton = withStyles({
       fontSize: 16,
       padding: '2px 15px',
       
-      
+     
       border: '1px solid',
       lineHeight: 1.5,
-      backgroundColor: '#da823f',
-      borderColor: '#da823f',
+      backgroundColor: '#794012',
+      borderColor: '#794012',
       fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',
@@ -32,17 +32,17 @@ const BootstrapButton = withStyles({
         '"Segoe UI Symbol"',
       ].join(','),
       '&:hover': {
-        backgroundColor: '#816550',
-        borderColor: '#816550',
+        backgroundColor: '#794012',
+        borderColor: '#794012',
         boxShadow: 'none',
       },
       '&:active': {
         boxShadow: 'none',
-        backgroundColor: '#da823f',
-        borderColor: '#da823f',
+        backgroundColor: '#794012',
+        borderColor: '#794012',
       },
       '&:focus': {
-        boxShadow: '0 0 0 0.2rem #da823f',
+        boxShadow: '0 0 0 0.2rem #794012',
       },
     },
   })(Button);
@@ -56,7 +56,7 @@ const theme = createTheme({
     
 });
 
-const Modalprim = () =>{
+const Modalsec = () =>{
   const [open, setOpen] = React.useState(false);
 
   const [scroll, setScroll] = React.useState();
@@ -74,7 +74,7 @@ const Modalprim = () =>{
   return (
     <div>
       <BootstrapButton variant="contained" color="primary" onClick={handleClickOpen('body')}>
-        PRIMARIA
+        SECUNDARIA
       </BootstrapButton>
       <Dialog
         open={open}
@@ -97,7 +97,7 @@ const Modalprim = () =>{
        
         <DialogActions>
         
-        <Button variant="contained" color="secondary" href="/primaria" >
+        <Button variant="contained" color="secondary" href="/secundaria" >
                      Continuar
                    </Button>
                    <ThemeProvider theme={theme}>
@@ -111,4 +111,4 @@ const Modalprim = () =>{
     </div>
   );
 }
-export default Modalprim;
+export default Modalsec;

@@ -4,15 +4,16 @@ import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Button from '@material-ui/core/Button';
-import ListItemText from '@material-ui/core/ListItemText';
+
 import Collapse from '@material-ui/core/Collapse';
 
 
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
+import Modalini from './Modalini'
 import Modalprim from './Modalprim'
-
+import Modalsec from './Modalsec'
 const BootstrapButton = withStyles({
   root: {
     boxShadow: 'none',
@@ -20,7 +21,7 @@ const BootstrapButton = withStyles({
     fontSize: 16,
     padding: '2px 40px',
     
-    marginBottom: '5px',
+    marginBottom: '2px',
     border: '1px solid',
     lineHeight: 1.5,
     backgroundColor: '#816550',
@@ -95,15 +96,16 @@ const ModalMenul = () => {
       </BootstrapButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" >
-          <ListItem button className={classes.nested}>
-            <ListItemText primary="INICIAL" />
+        <ListItem className={classes.nested}>
+           <Modalini />
+          
           </ListItem>
           <ListItem className={classes.nested}>
            <Modalprim />
           
           </ListItem>
-            <ListItem button className={classes.nested}>
-            <ListItemText primary="SECUNDARIA" />
+          <ListItem className={classes.nested}>
+           <Modalsec />
           
           </ListItem>
           
