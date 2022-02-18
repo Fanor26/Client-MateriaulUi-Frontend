@@ -7,7 +7,7 @@ import AccountBalanceSharpIcon from "@material-ui/icons/AccountBalanceSharp";
 import { Button } from "@material-ui/core";
 
 
-import Navbar from "./Navbar"
+import Navbbr from "./Navbbr"
 
 
 const estilos = makeStyles((theme) => ({
@@ -24,7 +24,7 @@ const estilos = makeStyles((theme) => ({
    
 }))
 
-const Contenedor = () => {
+const Contenedor = (props) => {
   const classes = estilos();
   const [abrir, setAbrir] = React.useState(false);
 
@@ -38,7 +38,7 @@ const Contenedor = () => {
   <>
     
     
-      <Navbar accionAbrir={accionAbrir} />
+      <Navbbr accionAbrir={accionAbrir} />
     
     
         <Hidden xlDown>

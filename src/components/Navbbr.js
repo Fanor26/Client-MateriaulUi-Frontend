@@ -1,11 +1,7 @@
-import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import React from 'react'
 import {AppBar, Toolbar, IconButton, Typography, Hidden, Button} from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-
-
-
+import {makeStyles} from '@material-ui/core/styles';
 const useStyles= makeStyles((theme)=>({
     root:{
         flexGrow: 1
@@ -24,23 +20,18 @@ const useStyles= makeStyles((theme)=>({
     }
     }));
 
-const Navbar =(props) => {
+const Navbbr = (props) => {
     const classes= useStyles();
-    return (
-      <>
-        <div className={classes.root}>
-            <AppBar   elevation={20} color="contained">
+  return (
+    <>
+    <AppBar   elevation={20} color="contained">
                 <Toolbar>
                 
-                <Typography variant="h6" className={classes.title}>
+                <Typography variant="h6" className={classes.title} >
            JESÚS DE NAZARETH 
           </Typography >
-          <Hidden smDown >
+
           
-        
-        
-       
-          </Hidden>
 
                             <Hidden only={['md', 'lg']} >
           <IconButton variant="contained" aria-label="menu" onClick={() => props.accionAbrir()} >
@@ -49,13 +40,10 @@ const Navbar =(props) => {
             
                  
           </Hidden >
-                </Toolbar>
-                
-            </AppBar>
-           
-        </div>
-        </>
-    );
+          </Toolbar>
+          </AppBar>
+    </>
+  )
 }
 
-export default Navbar;
+export default Navbbr
