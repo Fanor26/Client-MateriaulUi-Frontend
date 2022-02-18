@@ -24,7 +24,7 @@ const estilos = makeStyles((theme) => ({
    
 }))
 
-const Contenedor = (props) => {
+const Contenedor = () => {
   const classes = estilos();
   const [abrir, setAbrir] = React.useState(false);
 
