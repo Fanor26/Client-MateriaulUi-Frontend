@@ -5,7 +5,7 @@ import { ExpandLess, ExpandMore } from "@material-ui/icons";
 
 import Button from "@material-ui/core/Button";
 
-import Modalp from './Modalp'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +40,7 @@ const Menur = () => {
       <Collapse in={open} tiemout="auto" unmountOnExit>
         <List component="div">
           <ListItem className={classes.nested}>
-            <Modalp />
+            fanor
           </ListItem>
         </List>
       </Collapse>
