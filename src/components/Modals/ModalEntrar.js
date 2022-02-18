@@ -23,8 +23,8 @@ const BootstrapButton = withStyles({
     marginBottom: '5px',
     border: '1px solid',
     lineHeight: 1.5,
-    backgroundColor: '#0063cc',
-    borderColor: '#0063cc',
+    backgroundColor: '#654321',
+    borderColor: '#654321',
     fontFamily: [
       '-apple-system',
       'BlinkMacSystemFont',
@@ -38,17 +38,17 @@ const BootstrapButton = withStyles({
       '"Segoe UI Symbol"',
     ].join(','),
     '&:hover': {
-      backgroundColor: '#0069d9',
-      borderColor: '#0062cc',
+      backgroundColor: '#654321',
+      borderColor: '#654321',
       boxShadow: 'none',
     },
     '&:active': {
       boxShadow: 'none',
-      backgroundColor: '#0062cc',
-      borderColor: '#005cbf',
+      backgroundColor: '#8c7158',
+      borderColor: '#654321',
     },
     '&:focus': {
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+      boxShadow: '0 0 0 0.2rem #8c7158',
     },
   },
 })(Button);
@@ -135,7 +135,7 @@ const ModalEntrar = () => {
   return (
     <div>
       
-      <BootstrapButton className={classes.button} variant="contained" color="primary" onClick={handleClickOpen('body')}>
+      <BootstrapButton className={classes.button} variant="contained" color="secondary" onClick={handleClickOpen('body')}>
      ESTUDIANTES
       </BootstrapButton>
       
