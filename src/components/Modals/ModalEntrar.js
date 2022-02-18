@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 
 import { Hidden} from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
-
+import Menur from './Menur'
 const BootstrapButton = withStyles({
   root: {
     boxShadow: 'none',
@@ -162,7 +162,7 @@ const ModalEntrar = () => {
           <form className={classes.form} noValidate>
             <FormControl className={classes.formControl}>
              
-              
+              <Menur />
             </FormControl>
             
           </form>
