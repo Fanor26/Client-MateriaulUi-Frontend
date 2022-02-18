@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+
+
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
+
+import Contenedor from './components/Contenedor'
+
+
+
+
+
+
+
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./components/ThemeConfig";
+
+import Inicial from './components/Inicial'
+import Primaria from './components/Primaria'
+import Secundaria from './components/Secundaria'
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          FANOR2022
-          
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+    <Router>
+    
+    
+  
+    <Route   path='/' exact component={Contenedor}/>
+
+  
+
+    
+
+
+
+    
+    
+
+    
+    
+  
+    
+    
+
+
+   
+
+
+   
+    
+    
+    <Route   path='/inicial' exact component={Inicial}/>
+    <Route   path='/primaria' exact component={Primaria}/>
+    <Route   path='/secundaria' exact component={Secundaria}/>
+
+
+   
+    </Router>
+    </ThemeProvider>
   );
 }
 
