@@ -11,6 +11,7 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
+import Modalprim from './Modalprim'
 
 const BootstrapButton = withStyles({
   root: {
@@ -97,13 +98,15 @@ const ModalMenul = () => {
           <ListItem button className={classes.nested}>
             <ListItemText primary="INICIAL" />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemText primary="PRIMARIA" />
-            </ListItem>
+          <ListItem className={classes.nested}>
+           <Modalprim />
+          
+          </ListItem>
             <ListItem button className={classes.nested}>
             <ListItemText primary="SECUNDARIA" />
           
           </ListItem>
+          
         </List>
       </Collapse>
     </List>
