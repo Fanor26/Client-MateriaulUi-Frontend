@@ -155,7 +155,7 @@ const ModalEntrar = () => {
           </Typography>
           
           <Typography gutterBottom>
-          Comience con un excelente proceso de registro
+          Comience con un excelente Inicio de Sesión 
           </Typography>
          
           <Typography gutterBottom>
