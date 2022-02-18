@@ -150,12 +150,12 @@ const ModalEntrar = () => {
         Exclusivo para miembros 
         </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-           Todo lo que hay aqui esta diseñado para hacerte mejor!!!
+          <Typography gutterBottom >
+          <h6>Todo lo que hay aqui esta diseñado para hacerte mejor!!!</h6> 
           </Typography>
           
-          <Typography gutterBottom>
-          Tenga un excelente Inicio de Sesión
+          <Typography gutterBottom align="center">
+          <h5>Tenga un excelente Inicio de Sesión</h5>
           </Typography>
          
           <Typography gutterBottom>
