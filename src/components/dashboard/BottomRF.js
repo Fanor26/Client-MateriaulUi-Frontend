@@ -9,7 +9,7 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
-import Menur from './Menur'
+
 import { Hidden} from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
 
@@ -161,7 +161,7 @@ const BottomRF = () => {
           <Typography gutterBottom>
           <form className={classes.form} noValidate>
             <FormControl className={classes.formControl}>
-              <Menur />
+              FANOR
               
             </FormControl>
             
