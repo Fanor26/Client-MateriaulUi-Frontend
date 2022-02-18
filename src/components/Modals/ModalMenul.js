@@ -19,7 +19,7 @@ const BootstrapButton = withStyles({
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 16,
-    padding: '2px 40px',
+    padding: '2px 60px',
     
     marginBottom: '2px',
     border: '1px solid',
@@ -67,8 +67,8 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(3),
   },
   button: {
-    marginLeft: theme.spacing(4),
-    marginRight: theme.spacing(-4)
+    marginLeft: theme.spacing(5),
+    marginRight: theme.spacing(-7)
   },
 }));
 
