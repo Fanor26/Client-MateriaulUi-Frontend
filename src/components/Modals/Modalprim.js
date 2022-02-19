@@ -81,14 +81,6 @@ const BootstrapButton = withStyles({
     },
   })(Button);
  
-const theme = createTheme({
-  palette: {
-    primary:{
-      main: red[500],
-    },
-    }
-    
-});
 
 const Modalprim = () =>{
   const [open, setOpen] = React.useState(false);
@@ -135,12 +127,12 @@ const Modalprim = () =>{
 style={{ color: '#fff'}} >
         CONTINUAR
                    </BootstrapButton>
-                   <ThemeProvider theme={theme}>
+                   
                    
                    <BootstrappButton variant="contained" color="secondary"  onClick={handleClose} autoFocus>
             CANCELAR
           </BootstrappButton>
-          </ThemeProvider>
+         
         </DialogActions>
       </Dialog>
     </div>
