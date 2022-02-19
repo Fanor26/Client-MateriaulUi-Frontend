@@ -1,11 +1,11 @@
 import React from 'react';
-import { createTheme, Button, ThemeProvider, Typography} from '@material-ui/core';
+import { Button, Typography} from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import { withStyles } from '@material-ui/core/styles';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { red } from '@material-ui/core/colors'
+
 const BootstrapButton = withStyles({
     root: {
       boxShadow: 'none',
