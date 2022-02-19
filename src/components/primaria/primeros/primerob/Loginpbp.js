@@ -221,7 +221,7 @@ const Loginpbp =(props)=>{
                 <Grid align="center" style={marginTop} >
                
                
-                <BootButton type='submit'  color="primary"  style={btnstyle}  href="/registerpbp" >CREAR NUEVA CUENTA
+                <BootButton type='submit'  color="primary"  style={btnstyle}  href="registerpbp" >CREAR NUEVA CUENTA
               
                     </BootButton> 
                    

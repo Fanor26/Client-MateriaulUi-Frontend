@@ -130,7 +130,7 @@ const Modalprim = () =>{
        
         <DialogActions>
         
-        <BootstrapButton variant="contained" href="primaria" color="primary"
+        <BootstrapButton variant="contained" href="/primaria" color="primary"
 style={{ color: '#fff'}}>
         CONTINUAR
                    </BootstrapButton>

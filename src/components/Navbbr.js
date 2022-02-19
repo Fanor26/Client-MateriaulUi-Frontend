@@ -54,4 +54,4 @@ const Navbbr = (props) => {
   );
 };
 
-export default Navbbr;
+export default Navbbr
