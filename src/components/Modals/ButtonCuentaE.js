@@ -58,7 +58,7 @@ const ButtonCuentaE = () => {
               variant="contained"
             >
               <Button variant="text">
-                <Link to="/cont" style={{ color: "#000000" }}>
+                <Link to="/contenedorpbp" style={{ color: "#000000" }}>
                   {" "}
                   Área personal
                 </Link>
