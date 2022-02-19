@@ -97,7 +97,7 @@ const BootstrapButton = withStyles({
       },
     },
   });
-const Loginpbp =(props)=>{
+const Loginpbp =()=>{
     const [correomovil, setCorreomovil] = useState('')
     const [contrasena, setContrasena]= useState('') 
   
@@ -221,7 +221,7 @@ const Loginpbp =(props)=>{
                 <Grid align="center" style={marginTop} >
                
                
-                <BootButton type='submit'  color="primary"  style={btnstyle}  href="registerpbp" >CREAR NUEVA CUENTA
+                <BootButton type='submit'  color="primary"  style={btnstyle}  href="/registerpbp" >CREAR NUEVA CUENTA
               
                     </BootButton> 
                    
