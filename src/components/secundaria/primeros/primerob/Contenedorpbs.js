@@ -1,8 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Cajonpcp from "./Cajonpcp";
+import Cajonpbs from "./Cajonpbs";
 import { Hidden, Box, Grid } from "@material-ui/core";
-import Sidevarpcp from "./Sidevarpcp";
+import Sidevarpbs from "./Sidevarpbs";
 
 
 import AccountBalanceSharpIcon from "@material-ui/icons/AccountBalanceSharp";
@@ -16,7 +16,7 @@ const estilos = makeStyles((theme) => ({
   },
 }));
 
-const Contenedorpcp = () => {
+const Contenedorpbs = () => {
   const classes = estilos();
   const [abrir, setAbrir] = React.useState(false);
 
@@ -25,14 +25,14 @@ const Contenedorpcp = () => {
   };
   return (
     <>   
-      <Sidevarpcp accionAbrir={accionAbrir} />
+      <Sidevarpbs accionAbrir={accionAbrir} />
      
       <Hidden xlDown>
-        <Cajonpcp variant="permanent" open={true} />
+        <Cajonpbs variant="permanent" open={true} />
       </Hidden>
 
       <Hidden xlUp>
-        <Cajonpcp variant="temporary" open={abrir} onClose={accionAbrir} />
+        <Cajonpbs variant="temporary" open={abrir} onClose={accionAbrir} />
       </Hidden>
       
       
@@ -67,4 +67,4 @@ const Contenedorpcp = () => {
   );
 };
 
-export default Contenedorpcp;
+export default Contenedorpbs;

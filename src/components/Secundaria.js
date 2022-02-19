@@ -80,7 +80,7 @@ const Secundaria = () => {
                 <BootstrapButton
                   BootstrapButton
                   className={classes.iconos}
-                  href="/loginpap"
+                  href="/loginpas"
                   color="primary"
                   style={{ color: "#fff" }}
                 >
@@ -97,7 +97,7 @@ const Secundaria = () => {
               icono={
                 <BootstrapButton
                   className={classes.iconos}
-                  href="/loginpbp"
+                  href="/loginpbs"
                   color="primary"
                   style={{ color: "#fff" }}
                 >
@@ -114,7 +114,7 @@ const Secundaria = () => {
               icono={
                 <BootstrapButton
                   className={classes.iconos}
-                  href="/loginpcp"
+                  href="/loginpcs"
                   color="primary"
                   style={{ color: "#fff" }}
                 >

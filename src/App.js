@@ -24,6 +24,19 @@ import Registerpcp from './components/primaria/primeros/primeroc/Registerpcp'
 import Contenedorpcp from './components/primaria/primeros/primeroc/Contenedorpcp'
 
 
+import Loginpas from './components/secundaria/primeros/primeroa/Loginpas'
+import Registerpas from './components/secundaria/primeros/primeroa/Registerpas'
+import Contenedorpas from './components/secundaria/primeros/primeroa/Contenedorpas'
+
+import Loginpbs from './components/secundaria/primeros/primerob/Loginpbs'
+import Registerpbs from './components/secundaria/primeros/primerob/Registerpbs'
+import Contenedorpbs from './components/secundaria/primeros/primerob/Contenedorpbs'
+
+import Loginpcs from './components/secundaria/primeros/primeroc/Loginpcs'
+import Registerpcs from './components/secundaria/primeros/primeroc/Registerpcs'
+import Contenedorpcs from './components/secundaria/primeros/primeroc/Contenedorpcs'
+
+
 
 function App() {
   return (
@@ -35,6 +48,8 @@ function App() {
      
       <Route path="/primaria" exact component={Primaria} />
       <Route path="/secundaria" exact component={Secundaria} />
+
+
       <Route   path='/loginpap' exact component={Loginpap}/>
     <Route   path='/registerpap' exact component={Registerpap}/>
     <Route   path='/contenedorpap' exact component={Contenedorpap}/>
@@ -46,6 +61,19 @@ function App() {
     <Route   path='/loginpcp' exact component={Loginpcp}/>
     <Route   path='/registerpcp' exact component={Registerpcp}/>
     <Route   path='/contenedorpcp' exact component={Contenedorpcp}/>
+
+
+    <Route   path='/loginpas' exact component={Loginpas}/>
+    <Route   path='/registerpas' exact component={Registerpas}/>
+    <Route   path='/contenedorpas' exact component={Contenedorpas}/>
+
+      <Route   path='/loginpbs' exact component={Loginpbs}/>
+    <Route   path='/registerpbs' exact component={Registerpbs}/>
+    <Route   path='/contenedorpbs' exact component={Contenedorpbs}/>
+
+    <Route   path='/loginpcs' exact component={Loginpcs}/>
+    <Route   path='/registerpcs' exact component={Registerpcs}/>
+    <Route   path='/contenedorpcs' exact component={Contenedorpcs}/>
      
     </Router>
     </ThemeProvider>
