@@ -11,6 +11,9 @@ import Primaria from "./components/Primaria";
 
 
 
+import Loginpap from './components/primaria/primeros/primeroa/Loginpap'
+import Registerpap from './components/primaria/primeros/primeroa/Registerpap'
+import Contenedorpap from './components/primaria/primeros/primeroa/Contenedorpap'
 
 import Loginpbp from './components/primaria/primeros/primerob/Loginpbp'
 import Registerpbp from './components/primaria/primeros/primerob/Registerpbp'
@@ -32,6 +35,9 @@ function App() {
      
       <Route path="/primaria" exact component={Primaria} />
 
+      <Route   path='/loginpap' exact component={Loginpap}/>
+    <Route   path='/registerpap' exact component={Registerpap}/>
+    <Route   path='/contenedorpap' exact component={Contenedorpap}/>
 
       <Route   path='/loginpbp' exact component={Loginpbp}/>
     <Route   path='/registerpbp' exact component={Registerpbp}/>

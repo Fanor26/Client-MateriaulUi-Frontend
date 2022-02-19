@@ -23,7 +23,7 @@ const salir= () =>{
   window.location.href="/"
 }
 
-const Sidevarpbp = (props) => {
+const Sidevarpap = (props) => {
   const classes = estilos();
 
   return (
@@ -44,7 +44,7 @@ const Sidevarpbp = (props) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h8" className={classes.title}>
-          <Button> PRIMERO B PRIMARIA</Button>
+          <Button> PRIMERO A PRIMARIA</Button>
           
         </Typography>
         
@@ -56,4 +56,4 @@ const Sidevarpbp = (props) => {
     </div>
   );
 }
-export default Sidevarpbp;
+export default Sidevarpap;
