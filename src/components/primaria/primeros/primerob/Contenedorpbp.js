@@ -67,4 +67,4 @@ const Contenedorpbp = () => {
   );
 };
 
-export default Contenedorpbp;
+export default Contenedorpbp

@@ -51,4 +51,4 @@ const Sidevarpbp = (props) => {
     </div>
   );
 }
-export default Sidevarpbp;
+export default Sidevarpbp
