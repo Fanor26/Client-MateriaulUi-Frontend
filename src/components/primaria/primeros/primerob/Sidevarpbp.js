@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
-const estilos = makeStyles((theme) => ({
+const estilos = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
