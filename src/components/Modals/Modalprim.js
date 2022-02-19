@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Typography} from '@material-ui/core';
+import {Button, Typography} from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -11,7 +11,9 @@ const BootstrapButton = withStyles({
       boxShadow: 'none',
       textTransform: 'none',
       fontSize: 16,
-      padding: '6px 12px',
+      padding: '2px 15px',
+      
+     
       border: '1px solid',
       lineHeight: 1.5,
       backgroundColor: '#c68251',
@@ -43,12 +45,18 @@ const BootstrapButton = withStyles({
       },
     },
   })(Button);
+  
+
+  
+  
   const BootstrappButton = withStyles({
     root: {
       boxShadow: 'none',
       textTransform: 'none',
       fontSize: 16,
-      padding: '6px 12px',
+      padding: '2px 15px',
+      
+     
       border: '1px solid',
       lineHeight: 1.5,
       backgroundColor: '#ff0003',
@@ -80,8 +88,7 @@ const BootstrapButton = withStyles({
       },
     },
   })(Button);
- 
-
+  
 const Modalprim = () =>{
   const [open, setOpen] = React.useState(false);
 
@@ -124,12 +131,12 @@ const Modalprim = () =>{
         <DialogActions>
         
         <BootstrapButton variant="contained" href="primaria" color="primary"
-style={{ color: '#fff'}} >
+style={{ color: '#fff'}}>
         CONTINUAR
                    </BootstrapButton>
                    
                    
-                   <BootstrappButton variant="contained" color="secondary"  onClick={handleClose} autoFocus>
+                   <BootstrappButton variant="contained" color="secondary"  onClick={handleClose} >
             CANCELAR
           </BootstrappButton>
          

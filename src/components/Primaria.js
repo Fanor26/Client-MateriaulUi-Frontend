@@ -2,14 +2,54 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
-
+import { withStyles } from '@material-ui/core/styles';
 import "../assets/css/Dashboard.css";
 
 import CardsHeader from "./CardsHeader";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const useStyles = makeStyles((theme) => ({
+
+
+const BootstrapButton = withStyles({
+  root: {
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    padding: '6px 12px',
+    border: '1px solid',
+    lineHeight: 1.5,
+    backgroundColor: '#c68251',
+    borderColor: '#c68251',
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:hover': {
+      backgroundColor: '#c68251',
+      borderColor: '#c68251',
+      boxShadow: 'none',
+    },
+    '&:active': {
+      boxShadow: 'none',
+      backgroundColor: '#c68251',
+      borderColor: '#c68251',
+    },
+    '&:focus': {
+      boxShadow: '0 0 0 0.2rem #c68251',
+    },
+  },
+})(Button);
+
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
@@ -29,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Primaria = (props) => {
+const Primaria = () => {
   const classes = useStyles();
   return (
     <>
@@ -39,9 +79,10 @@ const Primaria = (props) => {
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
               icono={
-                <Button className={classes.iconos} href="loginpap">
+                <BootstrapButton BootstrapButton className={classes.iconos} href="loginpap" color="primary"
+                style={{ color: '#fff'}}>
                   "A"
-                </Button>
+                </BootstrapButton>
               }
               titulo="PRIMERO"
               color="rgba(248,80,50,1)"
@@ -51,9 +92,10 @@ const Primaria = (props) => {
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
               icono={
-                <Button className={classes.iconos} href="loginpbp">
+                <BootstrapButton className={classes.iconos} href="loginpbp" color="primary"
+                style={{ color: '#fff'}}>
                   "B"
-                </Button>
+                </BootstrapButton>
               }
               titulo="PRIMERO"
               color="rgba(248,80,50,1)"
@@ -63,9 +105,10 @@ const Primaria = (props) => {
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
               icono={
-                <Button className={classes.iconos} href="loginpcp">
+                <BootstrapButton className={classes.iconos} href="loginpcp" color="primary"
+                style={{ color: '#fff'}}>
                   "C"
-                </Button>
+                </BootstrapButton>
               }
               titulo="PRIMERO"
               color="rgba(248,80,50,1)"
