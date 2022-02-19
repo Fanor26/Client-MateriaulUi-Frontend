@@ -173,7 +173,7 @@ const Loginpcs =(props)=>{
           
                 </Box>
                 <Grid align='center'>
-                     <Avatar >P</Avatar>
+                     <Avatar >S</Avatar>
                     <h2>Primero "C"</h2>
                 </Grid>
                 <Grid component="form" novalidate onSubmit={login} >

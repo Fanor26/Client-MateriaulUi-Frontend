@@ -173,7 +173,7 @@ const Loginpas = ()=>{
           
                 </Box>
                 <Grid align='center'>
-                     <Avatar >P</Avatar>
+                     <Avatar >S</Avatar>
                     <h2>Primero "A"</h2>
                 </Grid>
                 <Grid component="form" novalidate onSubmit={login} >

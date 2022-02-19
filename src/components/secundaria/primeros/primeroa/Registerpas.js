@@ -118,7 +118,7 @@ const Registerpas = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          P
+          S
         </Avatar>
         <Typography component="h1" variant="h5">
          Primero "A"

@@ -173,7 +173,7 @@ const Loginpbs =(props)=>{
           
                 </Box>
                 <Grid align='center'>
-                     <Avatar >P</Avatar>
+                     <Avatar >S</Avatar>
                     <h2>Primero "B"</h2>
                 </Grid>
                 <Grid component="form" novalidate onSubmit={login} >

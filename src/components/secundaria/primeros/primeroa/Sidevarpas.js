@@ -44,7 +44,7 @@ const Sidevarpas = (props) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h8" className={classes.title}>
-          <Button> PRIMERO A PRIMARIA</Button>
+          <Button> PRIMERO A SECUNDARIA</Button>
           
         </Typography>
         

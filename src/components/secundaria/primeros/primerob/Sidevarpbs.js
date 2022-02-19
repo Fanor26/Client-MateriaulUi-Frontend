@@ -44,7 +44,7 @@ const Sidevarpbs = (props) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h8" className={classes.title}>
-          <Button> PRIMERO B PRIMARIA</Button>
+          <Button> PRIMERO B SECUNDARIA</Button>
           
         </Typography>
         
