@@ -97,7 +97,7 @@ const Primaria = () => {
               icono={
                 <BootstrapButton
                   className={classes.iconos}
-                  href="loginpbp"
+                  href="/loginpbp"
                   color="primary"
                   style={{ color: "#fff" }}
                 >
