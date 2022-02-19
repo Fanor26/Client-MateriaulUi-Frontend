@@ -105,7 +105,7 @@ const Registerpbp = () => {
        
       setTimeout(() => {
       
-     window.location.href='loginpbp'
+     window.location.href='/loginpbp'
       },1600)
       }
     }
