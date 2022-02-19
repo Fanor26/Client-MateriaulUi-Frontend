@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {AppBar, Toolbar} from '@material-ui/core';
-
+import ButtonCuentaE from '../../../Modals/ButtonCuentaE'
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -17,7 +17,11 @@ const estilos = makeStyles((theme) => ({
     flexGrow: 1,
   },
 }));
+const salir= () =>{
 
+  sessionStorage.clear()
+  window.location.href="/"
+}
 
 const Sidevarpcp = (props) => {
   const classes = estilos();
@@ -44,7 +48,7 @@ const Sidevarpcp = (props) => {
           
         </Typography>
         
-        
+        <ButtonCuentaE />
        
       </Toolbar>
     </AppBar>

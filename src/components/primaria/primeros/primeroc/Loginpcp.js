@@ -3,7 +3,7 @@ import { Grid,Paper, Avatar, TextField, Typography,Link, Box } from '@material-u
 import { withStyles } from '@material-ui/core/styles';
 import { createTheme, Button, ThemeProvider} from '@material-ui/core';
 
-import { orange} from '@material-ui/core/colors';
+import { purple, green, orange, lightBlue } from '@material-ui/core/colors';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Swal from 'sweetalert2'
@@ -93,7 +93,7 @@ const BootstrapButton = withStyles({
       
       secondary: {
       
-        main: orange[500],
+        main: green[500],
       },
     },
   });
@@ -151,7 +151,7 @@ const Loginpcp =(props)=>{
         window.location.href="/"
       }
     const paperStyle = { padding: '30px 20px', width: 350, margin: " 10px auto", marginTop:"40px" }
-   
+    const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
     const marginTop = { marginTop: 10 }
     return(
@@ -221,7 +221,7 @@ const Loginpcp =(props)=>{
                 <Grid align="center" style={marginTop} >
                
                
-                <BootButton type='submit'  color="primary"  style={btnstyle}  href="registerpcp" >CREAR NUEVA CUENTA
+                <BootButton type='submit'  color="primary"  style={btnstyle}  href="/registerpcp" >CREAR NUEVA CUENTA
               
                     </BootButton> 
                    

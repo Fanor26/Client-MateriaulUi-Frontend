@@ -16,6 +16,10 @@ import Loginpbp from './components/primaria/primeros/primerob/Loginpbp'
 import Registerpbp from './components/primaria/primeros/primerob/Registerpbp'
 import Contenedorpbp from './components/primaria/primeros/primerob/Contenedorpbp'
 
+import Loginpcp from './components/primaria/primeros/primeroc/Loginpcp'
+import Registerpcp from './components/primaria/primeros/primeroc/Registerpcp'
+import Contenedorpcp from './components/primaria/primeros/primeroc/Contenedorpcp'
+
 
 
 function App() {
@@ -33,7 +37,9 @@ function App() {
     <Route   path='/registerpbp' exact component={Registerpbp}/>
     <Route   path='/contenedorpbp' exact component={Contenedorpbp}/>
 
-
+    <Route   path='/loginpcp' exact component={Loginpcp}/>
+    <Route   path='/registerpcp' exact component={Registerpcp}/>
+    <Route   path='/contenedorpcp' exact component={Contenedorpcp}/>
      
     </Router>
     </ThemeProvider>

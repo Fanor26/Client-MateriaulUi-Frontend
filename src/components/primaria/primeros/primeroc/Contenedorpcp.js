@@ -6,7 +6,7 @@ import Sidevarpcp from "./Sidevarpcp";
 
 
 import AccountBalanceSharpIcon from "@material-ui/icons/AccountBalanceSharp";
-import {Button } from "@material-ui/core";
+import { Paper, Button } from "@material-ui/core";
 const estilos = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   content: {
