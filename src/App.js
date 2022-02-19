@@ -9,7 +9,7 @@ import Contenedor from "./components/Contenedor";
 
 import Primaria from "./components/Primaria";
 
-
+import Secundaria from "./components/Secundaria";
 
 import Loginpap from './components/primaria/primeros/primeroa/Loginpap'
 import Registerpap from './components/primaria/primeros/primeroa/Registerpap'
@@ -34,7 +34,7 @@ function App() {
 
      
       <Route path="/primaria" exact component={Primaria} />
-
+      <Route path="/secundaria" exact component={Secundaria} />
       <Route   path='/loginpap' exact component={Loginpap}/>
     <Route   path='/registerpap' exact component={Registerpap}/>
     <Route   path='/contenedorpap' exact component={Contenedorpap}/>

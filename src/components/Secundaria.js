@@ -17,8 +17,8 @@ const BootstrapButton = withStyles({
     padding: "6px 12px",
     border: "1px solid",
     lineHeight: 1.5,
-    backgroundColor: "#c68251",
-    borderColor: "#c68251",
+    backgroundColor: "#79593c",
+    borderColor: "#79593c",
     fontFamily: [
       "-apple-system",
       "BlinkMacSystemFont",
@@ -32,17 +32,17 @@ const BootstrapButton = withStyles({
       '"Segoe UI Symbol"',
     ].join(","),
     "&:hover": {
-      backgroundColor: "#c68251",
-      borderColor: "#c68251",
+      backgroundColor: "#79593c",
+      borderColor: "#79593c",
       boxShadow: "none",
     },
     "&:active": {
       boxShadow: "none",
-      backgroundColor: "#c68251",
-      borderColor: "#c68251",
+      backgroundColor: "#79593c",
+      borderColor: "#79593c",
     },
     "&:focus": {
-      boxShadow: "0 0 0 0.2rem #c68251",
+      boxShadow: "0 0 0 0.2rem #79593c",
     },
   },
 })(Button);
@@ -67,7 +67,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Primaria = () => {
+const Secundaria = () => {
   const classes = useStyles();
   return (
     <>
@@ -88,7 +88,7 @@ const Primaria = () => {
                 </BootstrapButton>
               }
               titulo="PRIMERO"
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -105,7 +105,7 @@ const Primaria = () => {
                 </BootstrapButton>
               }
               titulo="PRIMERO"
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -122,7 +122,7 @@ const Primaria = () => {
                 </BootstrapButton>
               }
               titulo="PRIMERO"
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -130,7 +130,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="SEGUNDO"
               icono={<Button className={classes.iconos}>"A"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -138,7 +138,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="SEGUNDO"
               icono={<Button className={classes.iconos}>"B"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -146,7 +146,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="SEGUNDO"
               icono={<Button className={classes.iconos}>"C"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -154,7 +154,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="TERCERO"
               icono={<Button className={classes.iconos}>"A"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -162,7 +162,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="TERCERO"
               icono={<Button className={classes.iconos}>"B"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -170,7 +170,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="TERCERO"
               icono={<Button className={classes.iconos}>"C"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -178,7 +178,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="CUARTO"
               icono={<Button className={classes.iconos}>"A"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -186,7 +186,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="CUARTO"
               icono={<Button className={classes.iconos}>"B"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -194,7 +194,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="CUARTO"
               icono={<Button className={classes.iconos}>"C"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -202,7 +202,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="QUINTO"
               icono={<Button className={classes.iconos}>"A"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -210,7 +210,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="QUINTO"
               icono={<Button className={classes.iconos}>"B"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -218,7 +218,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="QUINTO"
               icono={<Button className={classes.iconos}>"C"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -226,7 +226,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="SEXTO"
               icono={<Button className={classes.iconos}>"A"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -234,7 +234,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="SEXTO"
               icono={<Button className={classes.iconos}>"B"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -242,7 +242,7 @@ const Primaria = () => {
             <CardsHeader
               titulo="SEXTO"
               icono={<Button className={classes.iconos}>"C"</Button>}
-              color="#ef9b5f"
+              color="rgba(255,175,75,1)"
               font="white"
             />
           </Grid>
@@ -265,4 +265,4 @@ const Primaria = () => {
   );
 };
 
-export default Primaria
+export default Secundaria

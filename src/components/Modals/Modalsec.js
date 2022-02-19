@@ -1,11 +1,10 @@
 import React from 'react';
-import { createTheme, Button, ThemeProvider, Typography} from '@material-ui/core';
+import {Button, Typography} from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import { withStyles } from '@material-ui/core/styles';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { red } from '@material-ui/core/colors'
 
 const BootstrapButton = withStyles({
     root: {
@@ -17,8 +16,8 @@ const BootstrapButton = withStyles({
      
       border: '1px solid',
       lineHeight: 1.5,
-      backgroundColor: '#794012',
-      borderColor: '#794012',
+      backgroundColor: '#ffa420',
+      borderColor: '#ffa420',
       fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',
@@ -32,30 +31,64 @@ const BootstrapButton = withStyles({
         '"Segoe UI Symbol"',
       ].join(','),
       '&:hover': {
-        backgroundColor: '#794012',
-        borderColor: '#794012',
+        backgroundColor: '#ffa420',
+        borderColor: '#ffa420',
         boxShadow: 'none',
       },
       '&:active': {
         boxShadow: 'none',
-        backgroundColor: '#794012',
-        borderColor: '#794012',
+        backgroundColor: '#ffa420',
+        borderColor: '#ffa420',
       },
       '&:focus': {
-        boxShadow: '0 0 0 0.2rem #794012',
+        boxShadow: '0 0 0 0.2rem #ffa420',
       },
     },
   })(Button);
   
-const theme = createTheme({
-  palette: {
-    primary:{
-      main: red[500],
-    },
-    }
-    
-});
 
+  
+  
+  const BootstrappButton = withStyles({
+    root: {
+      boxShadow: 'none',
+      textTransform: 'none',
+      fontSize: 16,
+      padding: '2px 15px',
+      
+     
+      border: '1px solid',
+      lineHeight: 1.5,
+      backgroundColor: '#ff0003',
+      borderColor: '#ff0003',
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+      '&:hover': {
+        backgroundColor: '#ff0003',
+        borderColor: '#ff0003',
+        boxShadow: 'none',
+      },
+      '&:active': {
+        boxShadow: 'none',
+        backgroundColor: '#ff0003',
+        borderColor: '#ff0003',
+      },
+      '&:focus': {
+        boxShadow: '0 0 0 0.2rem #ff0003',
+      },
+    },
+  })(Button);
+  
 const Modalsec = () =>{
   const [open, setOpen] = React.useState(false);
 
@@ -97,15 +130,16 @@ const Modalsec = () =>{
        
         <DialogActions>
         
-        <Button variant="contained" color="secondary" href="#" >
-                     Continuar
-                   </Button>
-                   <ThemeProvider theme={theme}>
+        <BootstrapButton variant="contained" href="/secundaria" color="primary"
+style={{ color: '#fff'}}>
+        CONTINUAR
+                   </BootstrapButton>
                    
-                   <Button variant="contained" color="primary"  onClick={handleClose} autoFocus>
-            Cancelar
-          </Button>
-          </ThemeProvider>
+                   
+                   <BootstrappButton variant="contained" color="secondary"  onClick={handleClose} >
+            CANCELAR
+          </BootstrappButton>
+         
         </DialogActions>
       </Dialog>
     </div>
