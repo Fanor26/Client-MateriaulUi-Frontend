@@ -151,7 +151,7 @@ const ModalEntrar = () => {
         </DialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom >
-          <h6>Todo lo que hay aqui esta diseñado para hacerte mejor!!!</h6> 
+          <h6>Todo lo que hay aqui esta diseñado para hacerte Mejor.</h6> 
           </Typography>
           
           <Typography gutterBottom align="center">
