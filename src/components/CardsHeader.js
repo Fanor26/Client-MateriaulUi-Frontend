@@ -40,4 +40,4 @@ const CardsHeader = (props) => {
     );
 }
 
-export default CardsHeader;
+export default CardsHeader

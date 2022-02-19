@@ -100,11 +100,11 @@ const Cajonpbp = (props) => {
          
         
         <Divider />
-        <BootstrapButton href="dashboard"  variant="contained" color="primary">ÁREA PERSONAL</BootstrapButton>
-        <BootstrapButton href="dashboard"  variant="contained" color="primary">MIS TEMAS</BootstrapButton>
-        <BootstrapButton href="dashboard"  variant="contained" color="primary">MIS TAREAS</BootstrapButton>
-        <BootstrapButton href="dashboard"  variant="contained" color="primary">MIS VIDEOS</BootstrapButton>
-        <BootstrapButton href="dashboard"  variant="contained" color="primary">MIS EVALUACIONES</BootstrapButton>
+        <BootstrapButton href="#"  variant="contained" color="primary">ÁREA PERSONAL</BootstrapButton>
+        <BootstrapButton href="#"  variant="contained" color="primary">MIS TEMAS</BootstrapButton>
+        <BootstrapButton href="#"  variant="contained" color="primary">MIS TAREAS</BootstrapButton>
+        <BootstrapButton href="#"  variant="contained" color="primary">MIS VIDEOS</BootstrapButton>
+        <BootstrapButton href="#"  variant="contained" color="primary">MIS EVALUACIONES</BootstrapButton>
         
       </Drawer>
       

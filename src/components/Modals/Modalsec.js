@@ -97,7 +97,7 @@ const Modalsec = () =>{
        
         <DialogActions>
         
-        <Button variant="contained" color="secondary" href="/secundaria" >
+        <Button variant="contained" color="secondary" href="#" >
                      Continuar
                    </Button>
                    <ThemeProvider theme={theme}>

@@ -54,4 +54,4 @@ const Contenedor = () => {
   );
 };
 
-export default Contenedor;
+export default Contenedor

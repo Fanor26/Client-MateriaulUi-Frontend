@@ -62,4 +62,4 @@ const Cajon = (props) => {
   );
 };
 
-export default Cajon;
+export default Cajon

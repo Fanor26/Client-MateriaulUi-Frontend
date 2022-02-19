@@ -97,7 +97,7 @@ const Modalini = () =>{
        
         <DialogActions>
         
-        <Button variant="contained" color="secondary" href="/inicial" >
+        <Button variant="contained" color="secondary" href="#" >
                      Continuar
                    </Button>
                    <ThemeProvider theme={theme}>

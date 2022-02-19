@@ -79,7 +79,7 @@ const Primaria = () => {
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
               icono={
-                <BootstrapButton BootstrapButton className={classes.iconos} href="loginpap" color="primary"
+                <BootstrapButton BootstrapButton className={classes.iconos} href="#" color="primary"
                 style={{ color: '#fff'}}>
                   "A"
                 </BootstrapButton>
@@ -92,7 +92,7 @@ const Primaria = () => {
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
               icono={
-                <BootstrapButton className={classes.iconos} href="loginpbp" color="primary"
+                <BootstrapButton className={classes.iconos} href="/loginpbp" color="primary"
                 style={{ color: '#fff'}}>
                   "B"
                 </BootstrapButton>
@@ -105,7 +105,7 @@ const Primaria = () => {
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
               icono={
-                <BootstrapButton className={classes.iconos} href="loginpcp" color="primary"
+                <BootstrapButton className={classes.iconos} href="#" color="primary"
                 style={{ color: '#fff'}}>
                   "C"
                 </BootstrapButton>
