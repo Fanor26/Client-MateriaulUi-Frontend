@@ -142,7 +142,7 @@ const Loginpbs =(props)=>{
         showConfirmButton: false, 
         timer: 1500
      })
-   window.location.href='/contenedorpbp'
+   window.location.href='/contenedorpbs'
     }
     }
     const salir= () =>{
