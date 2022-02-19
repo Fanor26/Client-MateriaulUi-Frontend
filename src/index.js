@@ -5,7 +5,7 @@ import App from './App';
 
 import Axios from 'axios'
 
-Axios.defaults.baseURL='https://fanorserver.herokuapp.com/'
+Axios.defaults.baseURL='https://app-backendfanor.herokuapp.com/'
 
 ReactDOM.render(
   <React.StrictMode>
