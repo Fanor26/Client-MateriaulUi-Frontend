@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
-const estilos = makeStyles(() => ({
+const estilos = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -17,6 +17,11 @@ const estilos = makeStyles(() => ({
     flexGrow: 1,
   },
 }));
+const salir= () =>{
+
+  sessionStorage.clear()
+  window.location.href="/"
+}
 
 const Sidevarpbp = (props) => {
   const classes = estilos();
@@ -43,12 +48,12 @@ const Sidevarpbp = (props) => {
           
         </Typography>
         
-
-      
+     
+       
       </Toolbar>
     </AppBar>
       
     </div>
   );
 }
-export default Sidevarpbp
+export default Sidevarpbp;

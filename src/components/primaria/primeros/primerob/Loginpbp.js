@@ -3,7 +3,7 @@ import { Grid,Paper, Avatar, TextField, Typography,Link, Box } from '@material-u
 import { withStyles } from '@material-ui/core/styles';
 import { createTheme, Button, ThemeProvider} from '@material-ui/core';
 
-import {orange} from '@material-ui/core/colors';
+import { purple, green, orange, lightBlue } from '@material-ui/core/colors';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Swal from 'sweetalert2'
@@ -93,11 +93,11 @@ const BootstrapButton = withStyles({
       
       secondary: {
       
-        main: orange[500],
+        main: green[500],
       },
     },
   });
-const Loginpbp =()=>{
+const Loginpbp =(props)=>{
     const [correomovil, setCorreomovil] = useState('')
     const [contrasena, setContrasena]= useState('') 
   
@@ -142,7 +142,7 @@ const Loginpbp =()=>{
         showConfirmButton: false, 
         timer: 1500
      })
-   window.location.href='contenedorpbp'
+   window.location.href='/contenedorpbp'
     }
     }
     const salir= () =>{
@@ -151,7 +151,7 @@ const Loginpbp =()=>{
         window.location.href="/"
       }
     const paperStyle = { padding: '30px 20px', width: 350, margin: " 10px auto", marginTop:"40px" }
-   
+    const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
     const marginTop = { marginTop: 10 }
     return(

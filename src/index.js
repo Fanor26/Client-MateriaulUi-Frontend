@@ -5,7 +5,7 @@ import App from './App';
 
 import Axios from 'axios'
 
-Axios.defaults.baseURL='https://backend-escuelitas.herokuapp.com/'
+Axios.defaults.baseURL='http://localhost:4000/'
 
 ReactDOM.render(
   <React.StrictMode>

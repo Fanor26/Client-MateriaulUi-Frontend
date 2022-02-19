@@ -6,9 +6,9 @@ import { withStyles } from '@material-ui/core/styles';
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import { Button } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 
-
+import { Box, Hidden } from "@material-ui/core";
 const BootstrapButton = withStyles({
   root: {
     boxShadow: 'none',
@@ -100,11 +100,11 @@ const Cajonpbp = (props) => {
          
         
         <Divider />
-        <BootstrapButton href="#"  variant="contained" color="primary">ÁREA PERSONAL</BootstrapButton>
-        <BootstrapButton href="#"  variant="contained" color="primary">MIS TEMAS</BootstrapButton>
-        <BootstrapButton href="#"  variant="contained" color="primary">MIS TAREAS</BootstrapButton>
-        <BootstrapButton href="#"  variant="contained" color="primary">MIS VIDEOS</BootstrapButton>
-        <BootstrapButton href="#"  variant="contained" color="primary">MIS EVALUACIONES</BootstrapButton>
+        <BootstrapButton href="dashboard"  variant="contained" color="primary">ÁREA PERSONAL</BootstrapButton>
+        <BootstrapButton href="dashboard"  variant="contained" color="primary">MIS TEMAS</BootstrapButton>
+        <BootstrapButton href="dashboard"  variant="contained" color="primary">MIS TAREAS</BootstrapButton>
+        <BootstrapButton href="dashboard"  variant="contained" color="primary">MIS VIDEOS</BootstrapButton>
+        <BootstrapButton href="dashboard"  variant="contained" color="primary">MIS EVALUACIONES</BootstrapButton>
         
       </Drawer>
       
@@ -112,4 +112,4 @@ const Cajonpbp = (props) => {
   );
 };
 
-export default Cajonpbp
+export default Cajonpbp;

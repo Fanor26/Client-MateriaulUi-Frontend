@@ -29,9 +29,9 @@ function App() {
       <Route path="/primaria" exact component={Primaria} />
 
 
-      <Route   path='/primaria/loginpbp' exact component={Loginpbp}/>
+      <Route   path='/loginpbp' exact component={Loginpbp}/>
     <Route   path='/registerpbp' exact component={Registerpbp}/>
-    <Route   path='/primaria/contenedorpbp' exact component={Contenedorpbp}/>
+    <Route   path='/contenedorpbp' exact component={Contenedorpbp}/>
 
 
      

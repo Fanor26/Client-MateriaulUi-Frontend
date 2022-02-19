@@ -6,7 +6,7 @@ import Sidevarpbp from "./Sidevarpbp";
 
 
 import AccountBalanceSharpIcon from "@material-ui/icons/AccountBalanceSharp";
-import {  Button } from "@material-ui/core";
+import { Paper, Button } from "@material-ui/core";
 const estilos = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   content: {
@@ -67,4 +67,4 @@ const Contenedorpbp = () => {
   );
 };
 
-export default Contenedorpbp
+export default Contenedorpbp;
