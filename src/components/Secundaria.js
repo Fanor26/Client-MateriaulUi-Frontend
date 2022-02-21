@@ -128,8 +128,18 @@ const Secundaria = () => {
           </Grid>
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
-              titulo="SEGUNDO"
-              icono={<Button className={classes.iconos}>"A"</Button>}
+            icono={
+              <BootstrapButton
+                className={classes.iconos}
+                href="/loginsas"
+                color="primary"
+                style={{ color: "#fff" }}
+              >
+                "A"
+              </BootstrapButton>
+            }
+
+              titulo="SEGUNDO" 
               color="rgba(255,175,75,1)"
               font="white"
             />

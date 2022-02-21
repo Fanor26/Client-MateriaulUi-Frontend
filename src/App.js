@@ -37,6 +37,11 @@ import Registerpcs from './components/secundaria/primeros/primeroc/Registerpcs'
 import Contenedorpcs from './components/secundaria/primeros/primeroc/Contenedorpcs'
 
 
+import Loginsas from './components/secundaria/segundos/segundoa/Loginsas'
+import Registersas from './components/secundaria/segundos/segundoa/Registersas'
+import Contenedorsas from './components/secundaria/segundos/segundoa/Contenedorsas'
+
+
 import Signupe from './components/secundaria/primeros/primeroc/Signupe'
 
 function App() {
@@ -76,6 +81,10 @@ function App() {
     <Route   path='/registerpcs' exact component={Registerpcs}/>
     <Route   path='/contenedorpcs' exact component={Contenedorpcs}/>
 
+
+    <Route   path='/loginsas' exact component={Loginsas}/>
+    <Route   path='/registersas' exact component={Registersas}/>
+    <Route   path='/contenedorsas' exact component={Contenedorsas}/>
 
     <Route   path='/signupe' exact component={Signupe}/>
      
