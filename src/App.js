@@ -42,6 +42,23 @@ import Registersas from './components/secundaria/segundos/segundoa/Registersas'
 import Contenedorsas from './components/secundaria/segundos/segundoa/Contenedorsas'
 
 
+import Logintas from './components/secundaria/terceross/terceroa/Logintas'
+import Registertas from './components/secundaria/terceross/terceroa/Registertas'
+import Contenedortas from './components/secundaria/terceross/terceroa/Contenedortas'
+
+
+
+
+import Loginqas from './components/secundaria/quintos/quintoa/Loginqas'
+import Registerqas from './components/secundaria/quintos/quintoa/Registerqas'
+import Contenedorqas from './components/secundaria/quintos/quintoa/Contenedorqas'
+
+
+import Loginstas from './components/secundaria/sextos/sextoa/Loginstas'
+import Registerstas from './components/secundaria/sextos/sextoa/Registerstas'
+import Contenedorstas from './components/secundaria/sextos/sextoa/Contenedorstas'
+
+
 import Signupe from './components/secundaria/primeros/primeroc/Signupe'
 
 function App() {
@@ -85,6 +102,21 @@ function App() {
     <Route   path='/loginsas' exact component={Loginsas}/>
     <Route   path='/registersas' exact component={Registersas}/>
     <Route   path='/contenedorsas' exact component={Contenedorsas}/>
+
+
+    <Route   path='/logintas' exact component={Logintas}/>
+    <Route   path='/registertas' exact component={Registertas}/>
+    <Route   path='/contenedortas' exact component={Contenedortas}/>
+
+
+    <Route   path='/loginqas' exact component={Loginqas}/>
+    <Route   path='/registerqas' exact component={Registerqas}/>
+    <Route   path='/contenedorqas' exact component={Contenedorqas}/>
+
+
+    <Route   path='/loginstas' exact component={Loginstas}/>
+    <Route   path='/registerstas' exact component={Registerstas}/>
+    <Route   path='/contenedorstas' exact component={Contenedorstas}/>
 
     <Route   path='/signupe' exact component={Signupe}/>
      
