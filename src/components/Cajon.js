@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Drawer, Divider, Toolbar } from "@material-ui/core";
+import { Drawer, Divider, Toolbar, Button } from "@material-ui/core";
 
 import IconButton from "@material-ui/core/IconButton";
 
@@ -56,6 +56,7 @@ const Cajon = (props) => {
 
           <Divider />
           <ModalEntrar />
+        
         </Drawer>
       </Hidden>
     </div>

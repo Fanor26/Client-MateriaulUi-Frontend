@@ -11,58 +11,15 @@ import Axios from 'axios'
 
 
 const BootstrapButton = withStyles({
-  root: {
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: 16,
-    padding: '2px 15px',
-    
-   
-    border: '1px solid',
-    lineHeight: 1.5,
-    backgroundColor: '#ffa420',
-    borderColor: '#ffa420',
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-    '&:hover': {
-      backgroundColor: '#ffa420',
-      borderColor: '#ffa420',
-      boxShadow: 'none',
-    },
-    '&:active': {
-      boxShadow: 'none',
-      backgroundColor: '#ffa420',
-      borderColor: '#ffa420',
-    },
-    '&:focus': {
-      boxShadow: '0 0 0 0.2rem #ffa420',
-    },
-  },
-})(Button);
-
- 
-  const BootButton = withStyles({
     root: {
       boxShadow: 'none',
       textTransform: 'none',
       fontSize: 16,
-      padding: '2px 15px',
-      
-     
+      padding: '6px 12px',
       border: '1px solid',
       lineHeight: 1.5,
-      backgroundColor: '#654321',
-      borderColor: '#654321',
+      backgroundColor: '#0063cc',
+      borderColor: '#0063cc',
       fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',
@@ -76,21 +33,58 @@ const BootstrapButton = withStyles({
         '"Segoe UI Symbol"',
       ].join(','),
       '&:hover': {
-        backgroundColor: '#654321',
-        borderColor: '#654321',
+        backgroundColor: '#0069d9',
+        borderColor: '#0062cc',
         boxShadow: 'none',
       },
       '&:active': {
         boxShadow: 'none',
-        backgroundColor: '#654321',
-        borderColor: '#654321',
+        backgroundColor: '#FFFFFF',
+        borderColor: '#005cbf',
       },
       '&:focus': {
-        boxShadow: '0 0 0 0.2rem #654321',
+        boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
       },
     },
   })(Button);
-  
+ 
+  const BootButton = withStyles({
+    root: {
+      boxShadow: 'none',
+      textTransform: 'none',
+      fontSize: 16,
+      padding: '6px 12px',
+      border: '1px solid',
+      lineHeight: 1.5,
+      backgroundColor: '#39FF14',
+      borderColor: '#39FF14',
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+      '&:hover': {
+        backgroundColor: '#39FF14',
+        borderColor: '#39FF14',
+        boxShadow: 'none',
+      },
+      '&:active': {
+        boxShadow: 'none',
+        backgroundColor: '#FFFFFF',
+        borderColor: '#39FF14',
+      },
+      '&:focus': {
+        boxShadow: '0 0 0 0.2rem #39FF14',
+      },
+    },
+  })(Button);
   const theme = createTheme({
     palette: {
       primary:{
@@ -103,14 +97,19 @@ const BootstrapButton = withStyles({
       },
     },
   });
-const Loginpbs =(props)=>{
+const Signupe =(props)=>{
+    const [primernombre, setPrimernombre] = useState('')
+  const [segundonombre, setSegundonombre] = useState('')
+  const [tercernombre, setTercernombre] = useState('')
+  const [apellidopaterno, setApellidopaterno] = useState('')
+  const [apellidomaterno, setApellidomaterno] = useState('')
     const [correomovil, setCorreomovil] = useState('')
     const [contrasena, setContrasena]= useState('') 
   
-  const login = async(e)=>{
+  const register = async(e)=>{
   e.preventDefault(); 
-  const usuario={correomovil,contrasena}
-   const respuesta = await Axios.post('/primerobsec/login',usuario); 
+  const usuario={correomovil,contrasena,primernombre,segundonombre,tercernombre,apellidopaterno,apellidomaterno}
+   const respuesta = await Axios.post('/primerocsec/crear',usuario); 
     
    console.log(respuesta) 
    
@@ -125,7 +124,7 @@ const Loginpbs =(props)=>{
     })
   }
     else{
-  
+  /*
     const token = respuesta.data.token 
     const primernombre = respuesta.data.primernombre
     const segundonombre = respuesta.data.segundonombre
@@ -141,25 +140,24 @@ const Loginpbs =(props)=>{
     sessionStorage.setItem('apellidopaterno',apellidopaterno)
     sessionStorage.setItem('apellidomaterno',apellidomaterno)
     sessionStorage.setItem('idUsuario',idUsuario) 
-     
-     Swal.fire({
-        icon:'success', 
-        title: mensaje, 
-        showConfirmButton: false, 
-        timer: 1500
-     })
-   window.location.href='/contenedorpbs'
-    }
-    }
+     */
+    Swal.fire({
+      icon:'success', 
+      title: 'Estudiante Creado Correctamente', 
+      showConfirmButton: false, 
+      timer: 1500
+   }) 
+   
+  setTimeout(() => {
+  
+ window.location.href='/loginpcs'
+  },1600)
+  }
+}
     const salir= () =>{
 
-      sessionStorage.clear()
-      window.location.href="/"
-    }
-    const reg= () =>{
-
         sessionStorage.clear()
-        window.location.href="/registerpbs"
+        window.location.href="/"
       }
     const paperStyle = { padding: '30px 20px', width: 350, margin: " 10px auto", marginTop:"40px" }
     const avatarStyle={backgroundColor:'#1bbd7e'}
@@ -185,16 +183,81 @@ const Loginpbs =(props)=>{
                 </Box>
                 <Grid align='center'>
                      <Avatar >S</Avatar>
-                    <h2>Primero "B"</h2>
+                    <h2>Primero "C"</h2>
                 </Grid>
-                <Grid component="form" novalidate onSubmit={login} >
-                <Box >
+                <Grid  component="form" novalidate onSubmit={register} >
+                
+                
+              <TextField
+                autoComplete="pnombre"
+                name="primerNombre"
+                
+                required
+                fullWidth
+                id="primerNombre"
+                label="Primer Nombre"
+                autoFocus
+               onChange={(e)=>setPrimernombre(e.target.value)}
+
+              />
+              
+            
+              <TextField
+                autoComplete="snombre"
+                name="segundoNombre"
+               
+                
+                fullWidth
+                id="segundoNombre"
+                label="Segundo Nombre"
+                autoFocus
+                onChange={(e)=>setSegundonombre(e.target.value)}
+
+              />
+              
+           
+            <TextField
+                autoComplete="tnombre"
+                name="tercerNombre"
+                
+               
+                fullWidth
+                id="tercerNombre"
+                label="Tercer Nombre"
+                autoFocus
+               onChange={(e)=>setTercernombre(e.target.value)}
+
+              />
+              
+           
+              <TextField
+               
+                required
+                fullWidth
+                id="apellidopaterno"
+                label="Apellido Paterno"
+                name="apellidopaterno"
+                autoComplete="apellidopaterno"
+                onChange={(e)=>setApellidopaterno(e.target.value)}
+              />
+           
+              <TextField
+                
+                required
+                fullWidth
+                id="apellidomaterno"
+                label="Apellido Materno"
+                name="apellidomaterno"
+                autoComplete="apellidomaterno"
+              onChange={(e)=>setApellidomaterno(e.target.value)}
+              />
+          
                 <TextField
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-                label="Correo o Móvil"
+                label="Email Address"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -205,7 +268,7 @@ const Loginpbs =(props)=>{
                 required
                 fullWidth
                 name="password"
-                label="Contraseña"
+                label="Password"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -213,30 +276,22 @@ const Loginpbs =(props)=>{
               />
                
                 <ThemeProvider theme={theme}>
-                <BootstrapButton type='submit'  color="primary"  style={btnstyle} fullWidth  >ENTRAR
+                <BootButton type='submit'  color="primary"  style={btnstyle}   >CREAR NUEVA CUENTA
               
-                    </BootstrapButton> 
+                    </BootButton> 
                      
                    
                 </ThemeProvider>
-                </Box>
+             
                     </Grid>
                     <Grid align="center" >
                 <Typography >
-                     <Link href="#" >
-                     ¿Has olvidado la contraseña?
+                     <Link href="/loginpcs" >
+                     ¿Ya tienes una cuenta? Entrar
                 </Link>
                 </Typography>
                 
-                </Grid> <ThemeProvider theme={theme}>
-                <Grid align="center" style={marginTop} >
-               
-               
-                <BootButton type='submit'  color="primary"  style={btnstyle}  onClick={() =>reg()}>REGISTRARTE
-              
-                    </BootButton> 
-                   
-                    </Grid>  </ThemeProvider>
+                </Grid> 
                     
             </Paper>
             
@@ -245,4 +300,4 @@ const Loginpbs =(props)=>{
     )
 }
 
-export default Loginpbs
+export default Signupe

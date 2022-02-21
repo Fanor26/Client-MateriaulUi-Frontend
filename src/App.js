@@ -37,6 +37,7 @@ import Registerpcs from './components/secundaria/primeros/primeroc/Registerpcs'
 import Contenedorpcs from './components/secundaria/primeros/primeroc/Contenedorpcs'
 
 
+import Signupe from './components/secundaria/primeros/primeroc/Signupe'
 
 function App() {
   return (
@@ -74,6 +75,9 @@ function App() {
     <Route   path='/loginpcs' exact component={Loginpcs}/>
     <Route   path='/registerpcs' exact component={Registerpcs}/>
     <Route   path='/contenedorpcs' exact component={Contenedorpcs}/>
+
+
+    <Route   path='/signupe' exact component={Signupe}/>
      
     </Router>
     </ThemeProvider>

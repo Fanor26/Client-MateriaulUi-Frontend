@@ -11,53 +11,58 @@ import Axios from 'axios'
 
 
 const BootstrapButton = withStyles({
-    root: {
+  root: {
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    padding: '2px 15px',
+    
+   
+    border: '1px solid',
+    lineHeight: 1.5,
+    backgroundColor: '#ffa420',
+    borderColor: '#ffa420',
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:hover': {
+      backgroundColor: '#ffa420',
+      borderColor: '#ffa420',
       boxShadow: 'none',
-      textTransform: 'none',
-      fontSize: 16,
-      padding: '6px 12px',
-      border: '1px solid',
-      lineHeight: 1.5,
-      backgroundColor: '#0063cc',
-      borderColor: '#0063cc',
-      fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(','),
-      '&:hover': {
-        backgroundColor: '#0069d9',
-        borderColor: '#0062cc',
-        boxShadow: 'none',
-      },
-      '&:active': {
-        boxShadow: 'none',
-        backgroundColor: '#FFFFFF',
-        borderColor: '#005cbf',
-      },
-      '&:focus': {
-        boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-      },
     },
-  })(Button);
+    '&:active': {
+      boxShadow: 'none',
+      backgroundColor: '#ffa420',
+      borderColor: '#ffa420',
+    },
+    '&:focus': {
+      boxShadow: '0 0 0 0.2rem #ffa420',
+    },
+  },
+})(Button);
+
  
   const BootButton = withStyles({
     root: {
       boxShadow: 'none',
       textTransform: 'none',
       fontSize: 16,
-      padding: '6px 12px',
+      padding: '2px 15px',
+      
+     
       border: '1px solid',
       lineHeight: 1.5,
-      backgroundColor: '#39FF14',
-      borderColor: '#39FF14',
+      backgroundColor: '#654321',
+      borderColor: '#654321',
       fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',
@@ -71,20 +76,21 @@ const BootstrapButton = withStyles({
         '"Segoe UI Symbol"',
       ].join(','),
       '&:hover': {
-        backgroundColor: '#39FF14',
-        borderColor: '#39FF14',
+        backgroundColor: '#654321',
+        borderColor: '#654321',
         boxShadow: 'none',
       },
       '&:active': {
         boxShadow: 'none',
-        backgroundColor: '#FFFFFF',
-        borderColor: '#39FF14',
+        backgroundColor: '#654321',
+        borderColor: '#654321',
       },
       '&:focus': {
-        boxShadow: '0 0 0 0.2rem #39FF14',
+        boxShadow: '0 0 0 0.2rem #654321',
       },
     },
   })(Button);
+  
   const theme = createTheme({
     palette: {
       primary:{
@@ -97,7 +103,7 @@ const BootstrapButton = withStyles({
       },
     },
   });
-const Loginpas = ()=>{
+const Loginpas =(props)=>{
     const [correomovil, setCorreomovil] = useState('')
     const [contrasena, setContrasena]= useState('') 
   
@@ -147,8 +153,13 @@ const Loginpas = ()=>{
     }
     const salir= () =>{
 
+      sessionStorage.clear()
+      window.location.href="/"
+    }
+    const reg= () =>{
+
         sessionStorage.clear()
-        window.location.href="/"
+        window.location.href="/registerpas"
       }
     const paperStyle = { padding: '30px 20px', width: 350, margin: " 10px auto", marginTop:"40px" }
     const avatarStyle={backgroundColor:'#1bbd7e'}
@@ -183,7 +194,7 @@ const Loginpas = ()=>{
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Correo o Móvil"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -194,7 +205,7 @@ const Loginpas = ()=>{
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Contraseña"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -221,7 +232,7 @@ const Loginpas = ()=>{
                 <Grid align="center" style={marginTop} >
                
                
-                <BootButton type='submit'  color="primary"  style={btnstyle}  href="/registerpas" >CREAR NUEVA CUENTA
+                <BootButton type='submit'  color="primary"  style={btnstyle}  onClick={() =>reg()}>REGISTRARTE
               
                     </BootButton> 
                    
