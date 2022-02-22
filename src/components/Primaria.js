@@ -77,17 +77,7 @@ const Primaria = () => {
           <Grid item xs={12}></Grid>
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
-              icono={
-                <BootstrapButton
-                  BootstrapButton
-                  className={classes.iconos}
-                  href="/loginpap"
-                  color="primary"
-                  style={{ color: "#fff" }}
-                >
-                  "A"
-                </BootstrapButton>
-              }
+              icono={<Button className={classes.iconos}>"A"</Button>}
               titulo="PRIMERO"
               color="#ef9b5f"
               font="white"
@@ -95,16 +85,7 @@ const Primaria = () => {
           </Grid>
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
-              icono={
-                <BootstrapButton
-                  className={classes.iconos}
-                  href="/loginpbp"
-                  color="primary"
-                  style={{ color: "#fff" }}
-                >
-                  "B"
-                </BootstrapButton>
-              }
+              icono={<Button className={classes.iconos}>"B"</Button>}
               titulo="PRIMERO"
               color="#ef9b5f"
               font="white"
@@ -112,16 +93,7 @@ const Primaria = () => {
           </Grid>
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
-              icono={
-                <BootstrapButton
-                  className={classes.iconos}
-                  href="/loginpcp"
-                  color="primary"
-                  style={{ color: "#fff" }}
-                >
-                  "C"
-                </BootstrapButton>
-              }
+              icono={<Button className={classes.iconos}>"C"</Button>}
               titulo="PRIMERO"
               color="#ef9b5f"
               font="white"
