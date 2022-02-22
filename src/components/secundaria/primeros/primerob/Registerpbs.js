@@ -8,8 +8,18 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Swal from 'sweetalert2'
 import Axios from 'axios'
+import Contenedor from '../../../Contenedor'
 
-
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'DevFanor@'}
+      
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 const BootstrapButton = withStyles({
   root: {
     boxShadow: 'none',
@@ -168,7 +178,7 @@ const Registerpbs =(props)=>{
     const marginTop = { marginTop: 10 }
     return(
         <>
-        
+        <Contenedor />
         <Grid container spacing={2}>
             <Paper elevation={10} style={paperStyle}>
             <Box 
@@ -296,7 +306,9 @@ const Registerpbs =(props)=>{
                 </Typography>
                 
                 </Grid> 
-                    
+                <Box mt={5}>
+        <Copyright />
+      </Box>    
             </Paper>
             
         </Grid>

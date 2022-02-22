@@ -9,6 +9,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Swal from 'sweetalert2'
 import Axios from 'axios'
 import Contenedor from '../../../Contenedor'
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -113,14 +114,14 @@ const BootstrapButton = withStyles({
       },
     },
   });
-const Loginstas =(props)=>{
+const Logincas =(props)=>{
     const [correomovil, setCorreomovil] = useState('')
     const [contrasena, setContrasena]= useState('') 
   
   const login = async(e)=>{
   e.preventDefault(); 
   const usuario={correomovil,contrasena}
-   const respuesta = await Axios.post('/sextoasec/login',usuario); 
+   const respuesta = await Axios.post('/cuartoasec/login',usuario); 
     
    console.log(respuesta) 
    
@@ -158,7 +159,7 @@ const Loginstas =(props)=>{
         showConfirmButton: false, 
         timer: 1500
      })
-   window.location.href='/contenedorstas'
+   window.location.href='/contenedorcas'
     }
     }
     const salir= () =>{
@@ -169,7 +170,7 @@ const Loginstas =(props)=>{
     const reg= () =>{
 
         sessionStorage.clear()
-        window.location.href="/registerstas"
+        window.location.href="/registercas"
       }
     const paperStyle = { padding: '30px 20px', width: 350, margin: " 10px auto", marginTop:"40px" }
     const avatarStyle={backgroundColor:'#1bbd7e'}
@@ -195,7 +196,7 @@ const Loginstas =(props)=>{
                 </Box>
                 <Grid align='center'>
                      <Avatar >S</Avatar>
-                    <h2>Sexto "A"</h2>
+                    <h2>Cuarto "A"</h2>
                 </Grid>
                 <Grid component="form" novalidate onSubmit={login} >
                 <Box >
@@ -249,7 +250,7 @@ const Loginstas =(props)=>{
                     </Grid>  </ThemeProvider>
                     <Box mt={5}>
         <Copyright />
-      </Box>    
+      </Box>  
             </Paper>
             
         </Grid>
@@ -257,4 +258,4 @@ const Loginstas =(props)=>{
     )
 }
 
-export default Loginstas
+export default Logincas

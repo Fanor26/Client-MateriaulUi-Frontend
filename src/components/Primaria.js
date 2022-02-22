@@ -8,7 +8,7 @@ import "../assets/css/Dashboard.css";
 import CardsHeader from "./CardsHeader";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Contenedor from './Contenedor'
 const BootstrapButton = withStyles({
   root: {
     boxShadow: "none",
@@ -71,6 +71,7 @@ const Primaria = () => {
   const classes = useStyles();
   return (
     <>
+    <Contenedor /> 
       <div className={classes.root}>
         <Grid container spacing={2} className={classes.container}>
           <Grid item xs={12}></Grid>

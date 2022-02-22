@@ -46,7 +46,9 @@ import Logintas from './components/secundaria/terceross/terceroa/Logintas'
 import Registertas from './components/secundaria/terceross/terceroa/Registertas'
 import Contenedortas from './components/secundaria/terceross/terceroa/Contenedortas'
 
-
+import Logincas from './components/secundaria/cuartos/cuartoa/Logincas'
+import Registercas from './components/secundaria/cuartos/cuartoa/Registercas'
+import Contenedorcas from './components/secundaria/cuartos/cuartoa/Contenedorcas'
 
 
 import Loginqas from './components/secundaria/quintos/quintoa/Loginqas'
@@ -108,6 +110,10 @@ function App() {
     <Route   path='/registertas' exact component={Registertas}/>
     <Route   path='/contenedortas' exact component={Contenedortas}/>
 
+
+    <Route   path='/logincas' exact component={Logincas}/>
+    <Route   path='/registercas' exact component={Registercas}/>
+    <Route   path='/contenedorcas' exact component={Contenedorcas}/>
 
     <Route   path='/loginqas' exact component={Loginqas}/>
     <Route   path='/registerqas' exact component={Registerqas}/>

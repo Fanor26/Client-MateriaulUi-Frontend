@@ -8,7 +8,7 @@ import "../assets/css/Dashboard.css";
 import CardsHeader from "./CardsHeader";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Contenedor from "./Contenedor";
 const BootstrapButton = withStyles({
   root: {
     boxShadow: "none",
@@ -67,10 +67,11 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Secundaria = () => {
+const Secundaria = (props) => {
   const classes = useStyles();
   return (
     <>
+    <Contenedor />
       <div className={classes.root}>
         <Grid container spacing={2} className={classes.container}>
           <Grid item xs={12}></Grid>
@@ -198,8 +199,19 @@ const Secundaria = () => {
           </Grid>
           <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <CardsHeader
+              icono={
+                <BootstrapButton
+                  className={classes.iconos}
+                  href="/logincas"
+                  color="primary"
+                  style={{ color: "#fff" }}
+                >
+                  "A"
+                </BootstrapButton>
+              }
+              
               titulo="CUARTO"
-              icono={<Button className={classes.iconos}>"A"</Button>}
+              
               color="rgba(255,175,75,1)"
               font="white"
             />
