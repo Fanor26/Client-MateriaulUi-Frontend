@@ -155,7 +155,7 @@ const ModalEntrar = () => {
           </Typography>
           
           <Typography gutterBottom align="center">
-          <h5>Tenga un excelente Inicio de Sesión</h5>
+          <h5>Comienza con un excelente Inicio de Sesión</h5>
           </Typography>
          
           <Typography gutterBottom>
