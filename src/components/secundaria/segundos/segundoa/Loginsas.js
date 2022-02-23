@@ -157,7 +157,7 @@ const Loginsas =(props)=>{
         showConfirmButton: false, 
         timer: 1500
      })
-   window.location.href='/contenedorsas'
+   window.location.href='/dashboardsas'
     }
     }
     const salir= () =>{

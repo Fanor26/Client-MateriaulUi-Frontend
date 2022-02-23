@@ -46,9 +46,13 @@ import Dashboardpcs from './components/secundaria/primeros/primeroc/Dashboardpcs
 import Viewmus from './components/secundaria/primeros/primeroc/Viewmus'
 
 
+
 import Loginsas from './components/secundaria/segundos/segundoa/Loginsas'
 import Registersas from './components/secundaria/segundos/segundoa/Registersas'
-import Contenedorsas from './components/secundaria/segundos/segundoa/Contenedorsas'
+//import Contenedorsas from './components/secundaria/segundos/segundoa/Contenedorsas'
+import Dashboardsas from './components/secundaria/segundos/segundoa/Dashboardsas'
+import Viewmusea from './components/secundaria/segundos/segundoa/Viewmusea'
+
 
 
 import Logintas from './components/secundaria/terceross/terceroa/Logintas'
@@ -117,7 +121,9 @@ function App() {
 
     <Route   path='/loginsas' exact component={Loginsas}/>
     <Route   path='/registersas' exact component={Registersas}/>
-    <Route   path='/contenedorsas' exact component={Contenedorsas}/>
+    <Route   path='/dashboardsas' exact component={Dashboardsas}/>
+
+<Route   path='/viewmusea' exact component={Viewmusea}/>
 
 
     <Route   path='/logintas' exact component={Logintas}/>
