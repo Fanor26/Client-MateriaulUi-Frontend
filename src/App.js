@@ -26,15 +26,24 @@ import Contenedorpcp from './components/primaria/primeros/primeroc/Contenedorpcp
 
 import Loginpas from './components/secundaria/primeros/primeroa/Loginpas'
 import Registerpas from './components/secundaria/primeros/primeroa/Registerpas'
-import Contenedorpas from './components/secundaria/primeros/primeroa/Contenedorpas'
+//import Contenedorpas from './components/secundaria/primeros/primeroa/Contenedorpas'
+
+import Dashboardpas from './components/secundaria/primeros/primeroa/Dashboardpas'
+import Viewmusaa from './components/secundaria/primeros/primeroa/Viewmusaa'
 
 import Loginpbs from './components/secundaria/primeros/primerob/Loginpbs'
 import Registerpbs from './components/secundaria/primeros/primerob/Registerpbs'
-import Contenedorpbs from './components/secundaria/primeros/primerob/Contenedorpbs'
+//import Contenedorpbs from './components/secundaria/primeros/primerob/Contenedorpbs'
+import Dashboardpbs from './components/secundaria/primeros/primerob/Dashboardpbs'
+import Viewmusa from './components/secundaria/primeros/primerob/Viewmusa'
+
+
 
 import Loginpcs from './components/secundaria/primeros/primeroc/Loginpcs'
 import Registerpcs from './components/secundaria/primeros/primeroc/Registerpcs'
-import Contenedorpcs from './components/secundaria/primeros/primeroc/Contenedorpcs'
+//import Contenedorpcs from './components/secundaria/primeros/primeroc/Contenedorpcs'
+import Dashboardpcs from './components/secundaria/primeros/primeroc/Dashboardpcs'
+import Viewmus from './components/secundaria/primeros/primeroc/Viewmus'
 
 
 import Loginsas from './components/secundaria/segundos/segundoa/Loginsas'
@@ -61,7 +70,7 @@ import Registerstas from './components/secundaria/sextos/sextoa/Registerstas'
 import Contenedorstas from './components/secundaria/sextos/sextoa/Contenedorstas'
 
 
-import Signupe from './components/secundaria/primeros/primeroc/Signupe'
+
 
 function App() {
   return (
@@ -90,16 +99,21 @@ function App() {
 
     <Route   path='/loginpas' exact component={Loginpas}/>
     <Route   path='/registerpas' exact component={Registerpas}/>
-    <Route   path='/contenedorpas' exact component={Contenedorpas}/>
+    <Route   path='/dashboardpas' exact component={Dashboardpas}/>
+
+<Route   path='/viewmusaa' exact component={Viewmusaa}/>
 
       <Route   path='/loginpbs' exact component={Loginpbs}/>
     <Route   path='/registerpbs' exact component={Registerpbs}/>
-    <Route   path='/contenedorpbs' exact component={Contenedorpbs}/>
+    <Route   path='/dashboardpbs' exact component={Dashboardpbs}/>
+
+<Route   path='/viewmusa' exact component={Viewmusa}/>
 
     <Route   path='/loginpcs' exact component={Loginpcs}/>
     <Route   path='/registerpcs' exact component={Registerpcs}/>
-    <Route   path='/contenedorpcs' exact component={Contenedorpcs}/>
+    <Route   path='/dashboardpcs' exact component={Dashboardpcs}/>
 
+<Route   path='/viewmus' exact component={Viewmus}/>
 
     <Route   path='/loginsas' exact component={Loginsas}/>
     <Route   path='/registersas' exact component={Registersas}/>
@@ -124,7 +138,7 @@ function App() {
     <Route   path='/registerstas' exact component={Registerstas}/>
     <Route   path='/contenedorstas' exact component={Contenedorstas}/>
 
-    <Route   path='/signupe' exact component={Signupe}/>
+    
      
     </Router>
     </ThemeProvider>

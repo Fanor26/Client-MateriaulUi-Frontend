@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import { Typography, Button } from "@material-ui/core";
+import ListMaterias from './ListMaterias'
 
 import { Box, Hidden } from "@material-ui/core";
 const BootstrapButton = withStyles({
@@ -14,12 +15,13 @@ const BootstrapButton = withStyles({
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 16,
-    padding: '6px 12px',
+    padding: '2px 50px',
+    
+    marginTop: '2px',
     border: '1px solid',
-    marginBottom: '5px',
-    lineHeight: 1.5,
-    backgroundColor: '#0063cc',
-    borderColor: '#0063cc',
+    lineHeight: 2,
+    backgroundColor: '#816550',
+    borderColor: '#816550',
     fontFamily: [
       '-apple-system',
       'BlinkMacSystemFont',
@@ -33,20 +35,21 @@ const BootstrapButton = withStyles({
       '"Segoe UI Symbol"',
     ].join(','),
     '&:hover': {
-      backgroundColor: '#0069d9',
-      borderColor: '#0062cc',
+      backgroundColor: '#816550',
+      borderColor: '#816550',
       boxShadow: 'none',
     },
     '&:active': {
       boxShadow: 'none',
-      backgroundColor: '#0062cc',
-      borderColor: '#005cbf',
+      backgroundColor: '#816550',
+      borderColor: '#654321',
     },
     '&:focus': {
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+      boxShadow: '0 0 0 0.2rem #816550',
     },
   },
 })(Button);
+
 
 const estilos = makeStyles((theme) => ({
   root: {
@@ -71,6 +74,10 @@ const estilos = makeStyles((theme) => ({
   },
 }));
 
+const regresarprincipal = () => {
+  
+  window.location.href='/dashboardpcs'
+   }
 const Cajonpcs = (props) => {
   const classes = estilos();
 
@@ -100,12 +107,10 @@ const Cajonpcs = (props) => {
          
         
         <Divider />
-        <BootstrapButton href="#"  variant="contained" color="primary">ÁREA PERSONAL</BootstrapButton>
-        <BootstrapButton href="#"   variant="contained" color="primary">MIS TEMAS</BootstrapButton>
-        <BootstrapButton href="#"   variant="contained" color="primary">MIS TAREAS</BootstrapButton>
-        <BootstrapButton href="#"   variant="contained" color="primary">MIS VIDEOS</BootstrapButton>
-        <BootstrapButton href="#"   variant="contained" color="primary">MIS EVALUACIONES</BootstrapButton>
-        
+        <BootstrapButton onClick={() =>regresarprincipal()}  variant="contained" color="secondary">PRINCIPAL</BootstrapButton>
+       
+        <ListMaterias />
+     
       </Drawer>
       
     </div>

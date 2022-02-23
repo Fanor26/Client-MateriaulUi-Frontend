@@ -157,7 +157,7 @@ const Loginpcs =(props)=>{
         showConfirmButton: false, 
         timer: 1500
      })
-   window.location.href='/contenedorpcs'
+   window.location.href='/dashboardpcs'
     }
     }
     const salir= () =>{

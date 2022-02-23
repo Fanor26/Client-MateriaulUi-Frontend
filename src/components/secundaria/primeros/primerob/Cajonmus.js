@@ -56,7 +56,8 @@ const estilos = makeStyles((theme) => ({
     display: "flex",
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(1),
+    padding:"10px 30px",
     [theme.breakpoints.up("xlUp")]: {
       display: "flex",
     },
@@ -76,9 +77,15 @@ const estilos = makeStyles((theme) => ({
 
 const regresarprincipal = () => {
   
-  window.location.href='/dashboardpas'
+  window.location.href='/dashboardpbs'
    }
-const Cajonpas = (props) => {
+
+   const mus = () => {
+  
+    window.location.href='/viewmusa'
+     }
+    
+const Cajonmus = (props) => {
   const classes = estilos();
 
   return (
@@ -99,17 +106,20 @@ const Cajonpas = (props) => {
         <Toolbar>
           
             <IconButton edge="start" onClick={props.onClose} color="contained">
-              <MenuIcon />
+              <MenuIcon /> 
             </IconButton>
            
-        
+            <Button    className={classes.menuButton}  onClick={() =>mus()}  >MÚSICA</Button>
           </Toolbar>
          
         
         <Divider />
         <BootstrapButton onClick={() =>regresarprincipal()}  variant="contained" color="secondary">PRINCIPAL</BootstrapButton>
        
-        <ListMaterias />
+        <BootstrapButton href="#"   variant="contained" color="primary">TEMAS</BootstrapButton>
+        <BootstrapButton href="#"   variant="contained" color="primary">TAREAS</BootstrapButton>
+        <BootstrapButton href="#"   variant="contained" color="primary">VIDEOS</BootstrapButton>
+        <BootstrapButton href="#"   variant="contained" color="primary"> EVALUACIONES</BootstrapButton>
      
       </Drawer>
       
@@ -117,4 +127,4 @@ const Cajonpas = (props) => {
   );
 };
 
-export default Cajonpas;
+export default Cajonmus;

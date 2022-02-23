@@ -58,9 +58,9 @@ const ButtonCuentaE = () => {
               variant="contained"
             >
               <Button variant="text">
-                <Link to="/contenedorpas" style={{ color: "#000000" }}>
+                <Link to="/dashboardpas" style={{ color: "#000000" }}>
                   {" "}
-                  Área personal
+                  Perfil
                 </Link>
               </Button>
              

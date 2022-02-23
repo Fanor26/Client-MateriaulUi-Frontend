@@ -1,8 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Cajonpcs from "./Cajonpcs";
+import Cajonmus from "./Cajonmus";
 import { Hidden, Box, Grid } from "@material-ui/core";
-import Sidevarpcs from "./Sidevarpcs";
+import Sidevarpbs from "./Sidevarpbs";
 
 
 import AccountBalanceSharpIcon from "@material-ui/icons/AccountBalanceSharp";
@@ -16,7 +16,7 @@ const estilos = makeStyles((theme) => ({
   },
 }));
 
-const Contenedorpcs = () => {
+const Viewmusa = () => {
   const classes = estilos();
   const [abrir, setAbrir] = React.useState(false);
 
@@ -25,14 +25,14 @@ const Contenedorpcs = () => {
   };
   return (
     <>   
-      <Sidevarpcs accionAbrir={accionAbrir} />
+      <Sidevarpbs accionAbrir={accionAbrir} />
      
       <Hidden xlDown>
-        <Cajonpcs variant="permanent" open={true} />
+        <Cajonmus variant="permanent" open={true} />
       </Hidden>
 
       <Hidden xlUp>
-        <Cajonpcs variant="temporary" open={abrir} onClose={accionAbrir} />
+        <Cajonmus variant="temporary" open={abrir} onClose={accionAbrir} />
       </Hidden>
       
       
@@ -54,7 +54,7 @@ const Contenedorpcs = () => {
 >
  <Button  >
 
-<AccountBalanceSharpIcon /> <Box mx={1} my={1} >PRINCIPAL</Box>
+<AccountBalanceSharpIcon /> <Box mx={1} my={1} >MÚSICA</Box>
  </Button>
 </Box></Grid>
      
@@ -67,4 +67,4 @@ const Contenedorpcs = () => {
   );
 };
 
-export default Contenedorpcs;
+export default Viewmusa;

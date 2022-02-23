@@ -157,7 +157,7 @@ const Loginpas =(props)=>{
         showConfirmButton: false, 
         timer: 1500
      })
-   window.location.href='/contenedorpas'
+   window.location.href='/dashboardpas'
     }
     }
     const salir= () =>{

@@ -54,7 +54,7 @@ const Contenedorpas = () => {
 >
  <Button  >
 
-<AccountBalanceSharpIcon /> <Box mx={1} my={1} >ÁREA PERSONAL</Box>
+<AccountBalanceSharpIcon /> <Box mx={1} my={1} >PRINCIPAL</Box>
  </Button>
 </Box></Grid>
      
