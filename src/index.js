@@ -5,7 +5,7 @@ import App from './App';
 
 import Axios from 'axios'
 
-Axios.defaults.baseURL='https://app-backendfanor.herokuapp.com/'
+Axios.defaults.baseURL='https://juanor902.herokuapp.com'
 
 ReactDOM.render(
   <React.StrictMode>

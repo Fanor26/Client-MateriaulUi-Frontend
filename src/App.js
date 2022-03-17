@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./components/ThemeConfig";
@@ -73,17 +73,57 @@ import Loginstas from './components/secundaria/sextos/sextoa/Loginstas'
 import Registerstas from './components/secundaria/sextos/sextoa/Registerstas'
 import Contenedorstas from './components/secundaria/sextos/sextoa/Contenedorstas'
 
+import Tareas from './components/Tareas'
+import AddTarea from './components/AddTarea'
+import Tarea from './components/Tarea'
+import EditTarea from './components/EditTarea'
+
+
+
+import './App.css';
+
+import CreateBook from './components/imagetareas/CreateBook';
+import ShowBookList from './components/imagetareas/ShowBookList';
+import ShowBookDetails from './components/imagetareas/ShowBookDetails';
+import UpdateBookInfo from './components/imagetareas/UpdateBookInfo';
 
 
 
 function App() {
+  const [posts,setPosts]=useState([]);
+  useEffect(()=>{
+axios
+.get("/tareas/")
+.then(res => setPosts(res.data))
+.catch(error => console.log(error));
+
+  });
+
+
+  
   return (
     <ThemeProvider theme={theme}>
       
     <Router>
       <Route path="/" exact component={Contenedor} />
+      
+      <Route exact path='/' component={ShowBookList} />
+          <Route path='/create-book' component={CreateBook} />
+          <Route path='/edit-book/:id' component={UpdateBookInfo} />
+          <Route path='/show-book/:id' component={ShowBookDetails} />
 
-     
+
+          
+
+      <Route path="/tareas" exact render={() => <Tareas posts={posts}/>} /> 
+      
+      <Route path="/tarea/:id"
+     exact render={props => <Tarea {...props} posts={posts}/>} /> 
+
+<Route path="/update/:id"
+    exact  render={props => <EditTarea {...props} posts={posts}/>} /> 
+      
+      <Route path="/addtarea" exact component={AddTarea} />
       <Route path="/primaria" exact component={Primaria} />
       <Route path="/secundaria" exact component={Secundaria} />
 

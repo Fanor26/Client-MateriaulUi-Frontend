@@ -79,6 +79,10 @@ const regresarprincipal = () => {
   
   window.location.href='/dashboardpas'
    }
+   const tareaspas = () => {
+  
+    window.location.href='/tareas'
+     }
 
    const mus = () => {
   
@@ -117,7 +121,7 @@ const Cajonmus = (props) => {
         <BootstrapButton onClick={() =>regresarprincipal()}  variant="contained" color="secondary">PRINCIPAL</BootstrapButton>
        
         <BootstrapButton href="#"   variant="contained" color="primary">TEMAS</BootstrapButton>
-        <BootstrapButton href="#"   variant="contained" color="primary">TAREAS</BootstrapButton>
+        <BootstrapButton onClick={() =>tareaspas()} variant="contained" color="primary" >TAREAS</BootstrapButton>
         <BootstrapButton href="#"   variant="contained" color="primary">VIDEOS</BootstrapButton>
         <BootstrapButton href="#"   variant="contained" color="primary"> EVALUACIONES</BootstrapButton>
      

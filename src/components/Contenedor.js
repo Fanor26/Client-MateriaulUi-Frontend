@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Cajon from "./Cajon";
-
+import Tareas from './Tareas'
 import { Hidden, Box, Grid } from "@material-ui/core";
 import AccountBalanceSharpIcon from "@material-ui/icons/AccountBalanceSharp";
 import { Button } from "@material-ui/core";
@@ -36,10 +36,11 @@ const Contenedor = () => {
       <Hidden xlUp>
         <Cajon variant="temporary" open={abrir} onClose={accionAbrir} />
       </Hidden>
-
+     
       <div className={classes.content}>
         <div className={classes.toolbar}></div>
-        <Grid item xs={12}>
+        <Grid item xs={12} spacing={2}>
+        
           <Box bgcolor="primary.main" p={1} mx={-2} my={-2} textAlign="left">
             <Button>
               <AccountBalanceSharpIcon />{" "}
@@ -48,8 +49,12 @@ const Contenedor = () => {
               </Box>
             </Button>
           </Box>
-        </Grid>
-      </div>
+        
+          </Grid>
+          
+      
+  
+    </div>
     </>
   );
 };
