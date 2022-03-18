@@ -31,7 +31,7 @@ const EditUser = ({ match }) => {
       });
       if (res.ok) {
         setData({ name: "", image: "" });
-        history.replace("/Tareas");
+        history.replace("/tareas");
       }
     } catch (error) {
       console.log(error);
