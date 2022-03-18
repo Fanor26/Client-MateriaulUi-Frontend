@@ -87,9 +87,9 @@ import ShowBookList from './components/imagetareas/ShowBookList';
 import ShowBookDetails from './components/imagetareas/ShowBookDetails';
 import UpdateBookInfo from './components/imagetareas/UpdateBookInfo';
 
-import Home from "./pages/Home";
+import Home from "./components/Home";
 import AddUser from "./components/AddUser";
-import EditUser from "./pages/EditUser";
+import EditUser from "./components/EditUser";
 
 
 function App() {
