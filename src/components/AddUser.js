@@ -19,7 +19,7 @@ const AddUser = () => {
 
       const res = await fetch(`https://tareasasistencias.herokuapp.com/user`, {
         method: "POST",
-        mode: 'no-cors',
+        
         body: formData,
       });
       if (res.ok) {
