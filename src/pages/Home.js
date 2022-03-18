@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import Viewmusaa from '../../secundaria/primeros/primeroa/Viewmusaa'
 const Home = () => {
   const [users, setUsers] = useState();
 
@@ -27,6 +27,8 @@ const Home = () => {
     }
   };
   return (
+    <>
+    <Viewmusaa/>
     <div className="row">
       {users?.map((user) => (
         <div className="col-md-3 card me-3 mt-2 p-0" key={user._id}>
@@ -48,6 +50,7 @@ const Home = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 
