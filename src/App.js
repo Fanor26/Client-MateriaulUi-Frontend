@@ -110,7 +110,7 @@ axios
     <Router>
     
     <Route exact path="/tareas" component={Images} />
-    <Route exact path="/viewmusaa" component={Home} />
+    <Route exact path="/tareas" component={Home} />
           <Route path="/add" component={AddUser} />
           <Route path="/edit/:id" component={EditUser} />
 
