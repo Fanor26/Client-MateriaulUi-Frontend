@@ -6,7 +6,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await fetch(`https://tareasasistencias.herokuapp.com/user`);
+      const res = await fetch(`https://tareasasistencias.herokuapp.com/user/`);
       const data = await res.json();
       setUsers(data);
     };

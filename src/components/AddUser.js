@@ -17,7 +17,7 @@ const AddUser = () => {
       formData.append("image", data.image);
       formData.append("name", data.name);
 
-      const res = await fetch(`https://tareasasistencias.herokuapp.com/user`, {
+      const res = await fetch(`https://tareasasistencias.herokuapp.com/user/`, {
         method: "POST",
         body: formData,
       });
