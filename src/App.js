@@ -86,7 +86,10 @@ import CreateBook from './components/imagetareas/CreateBook';
 import ShowBookList from './components/imagetareas/ShowBookList';
 import ShowBookDetails from './components/imagetareas/ShowBookDetails';
 import UpdateBookInfo from './components/imagetareas/UpdateBookInfo';
-
+import Images from "./components/Images";
+import Home from "./pages/Home";
+import AddUser from "./pages/AddUser";
+import EditUser from "./pages/EditUser";
 
 
 function App() {
@@ -105,6 +108,11 @@ axios
     <ThemeProvider theme={theme}>
       
     <Router>
+    <Route exact path="/" component={Images} />
+    <Route exact path="/" component={Home} />
+          <Route path="/add" component={AddUser} />
+          <Route path="/edit/:id" component={EditUser} />
+
       <Route path="/" exact component={Contenedor} />
       
       <Route exact path='/' component={ShowBookList} />
