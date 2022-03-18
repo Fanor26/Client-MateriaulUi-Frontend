@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Viewmusaa from '../../secundaria/primeros/primeroa/Viewmusaa'
+import Viewmusaa from './././secundaria/primeros/primeroa/Viewmusaa'
 const Home = () => {
   const [users, setUsers] = useState();
 
