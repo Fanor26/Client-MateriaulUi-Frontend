@@ -5,7 +5,7 @@ import Tareas from './Tareas'
 import { Hidden, Box, Grid } from "@material-ui/core";
 import AccountBalanceSharpIcon from "@material-ui/icons/AccountBalanceSharp";
 import { Button } from "@material-ui/core";
-
+import Images from "./Images";
 import Navbbr from "./Navbbr";
 
 const estilos = makeStyles((theme) => ({
@@ -52,7 +52,7 @@ const Contenedor = () => {
         
           </Grid>
           
-      
+          <Images/>
   
     </div>
     </>

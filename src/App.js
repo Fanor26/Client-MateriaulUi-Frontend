@@ -86,7 +86,7 @@ import CreateBook from './components/imagetareas/CreateBook';
 import ShowBookList from './components/imagetareas/ShowBookList';
 import ShowBookDetails from './components/imagetareas/ShowBookDetails';
 import UpdateBookInfo from './components/imagetareas/UpdateBookInfo';
-import Images from "./components/Images";
+
 import Home from "./pages/Home";
 import AddUser from "./pages/AddUser";
 import EditUser from "./pages/EditUser";
@@ -108,8 +108,8 @@ axios
     <ThemeProvider theme={theme}>
       
     <Router>
-    <Route exact path="/" component={Images} />
-    <Route exact path="/tareas" component={Home} />
+    
+    <Route exact path="/" component={Home} />
           <Route path="/add" component={AddUser} />
           <Route path="/edit/:id" component={EditUser} />
 
@@ -123,7 +123,7 @@ axios
 
           
 
-      <Route path="/" exact render={() => <Tareas posts={posts}/>} /> 
+      <Route path="/tareas" exact render={() => <Tareas posts={posts}/>} /> 
       
       <Route path="/tarea/:id"
      exact render={props => <Tarea {...props} posts={posts}/>} /> 
