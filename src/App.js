@@ -73,7 +73,7 @@ import Loginstas from './components/secundaria/sextos/sextoa/Loginstas'
 import Registerstas from './components/secundaria/sextos/sextoa/Registerstas'
 import Contenedorstas from './components/secundaria/sextos/sextoa/Contenedorstas'
 
-import Tareas from './components/Tareas'
+import Images from './components/Images'
 import AddTarea from './components/AddTarea'
 import Tarea from './components/Tarea'
 import EditTarea from './components/EditTarea'
@@ -109,6 +109,7 @@ axios
       
     <Router>
     
+    <Route exact path="/tareas" component={Images} />
     <Route exact path="/" component={Home} />
           <Route path="/add" component={AddUser} />
           <Route path="/edit/:id" component={EditUser} />
@@ -123,7 +124,7 @@ axios
 
           
 
-      <Route path="/tareas" exact render={() => <Tareas posts={posts}/>} /> 
+     
       
       <Route path="/tarea/:id"
      exact render={props => <Tarea {...props} posts={posts}/>} /> 
