@@ -6,7 +6,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await fetch(`http://localhost:5000/user`);
+      const res = await fetch(`https://tareasasistencias.herokuapp.com/user`);
       const data = await res.json();
       setUsers(data);
     };
@@ -15,7 +15,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/user/${id}`, {
+      const res = await fetch(`https://tareasasistencias.herokuapp.com/user/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
