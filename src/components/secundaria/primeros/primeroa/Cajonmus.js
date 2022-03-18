@@ -6,10 +6,10 @@ import { withStyles } from '@material-ui/core/styles';
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import { Typography, Button } from "@material-ui/core";
-import ListMaterias from './ListMaterias'
+import { Button } from "@material-ui/core";
 
-import { Box, Hidden } from "@material-ui/core";
+
+i
 const BootstrapButton = withStyles({
   root: {
     boxShadow: 'none',
@@ -83,12 +83,15 @@ const regresarprincipal = () => {
   
     window.location.href='/tareas'
      }
+     const asistenciapas = () => {
+  
+      window.location.href='/asistencia'
+       }
 
    const mus = () => {
   
     window.location.href='/viewmusaa'
      }
-    
 const Cajonmus = (props) => {
   const classes = estilos();
 
@@ -122,7 +125,7 @@ const Cajonmus = (props) => {
        
         <BootstrapButton href="#"   variant="contained" color="primary">TEMAS</BootstrapButton>
         <BootstrapButton onClick={() =>tareaspas()} variant="contained" color="primary" >TAREAS</BootstrapButton>
-        <BootstrapButton href="#"   variant="contained" color="primary">VIDEOS</BootstrapButton>
+        <BootstrapButton onClick={() =>asistenciapas()}  variant="contained" color="primary">ASISTENCIA</BootstrapButton>
         <BootstrapButton href="#"   variant="contained" color="primary"> EVALUACIONES</BootstrapButton>
      
       </Drawer>
