@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import Home from './Home'
+import Viewmusaa from '././secundaria/primeros/primeroa/Viewmusaa'
 const AddUser = () => {
   const history = useHistory();
   const [data, setData] = useState({
@@ -32,7 +32,7 @@ const AddUser = () => {
 
   return (
     <>
-    
+    <Viewmusaa/>
     <div style={{ maxWidth: 500, margin: "auto" }}>
       <div className="mb-3">
         <input
