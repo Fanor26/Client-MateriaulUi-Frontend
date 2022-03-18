@@ -88,7 +88,7 @@ import ShowBookDetails from './components/imagetareas/ShowBookDetails';
 import UpdateBookInfo from './components/imagetareas/UpdateBookInfo';
 
 import Home from "./pages/Home";
-import AddUser from "./pages/AddUser";
+import AddUser from "./components/AddUser";
 import EditUser from "./pages/EditUser";
 
 
