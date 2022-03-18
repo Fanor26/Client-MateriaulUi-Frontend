@@ -87,7 +87,7 @@ import ShowBookList from './components/imagetareas/ShowBookList';
 import ShowBookDetails from './components/imagetareas/ShowBookDetails';
 import UpdateBookInfo from './components/imagetareas/UpdateBookInfo';
 
-import Home from "./components/Home";
+i
 import AddUser from "./components/AddUser";
 import EditUser from "./components/EditUser";
 
@@ -110,7 +110,7 @@ axios
     <Router>
     
     <Route exact path="/tareas" component={Images} />
-    <Route exact path="/tareas" component={Home} />
+    
           <Route path="/add" component={AddUser} />
           <Route path="/edit/:id" component={EditUser} />
 

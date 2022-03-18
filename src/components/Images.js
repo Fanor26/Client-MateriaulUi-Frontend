@@ -22,7 +22,7 @@ const Images = () => {
         </div>
       </div>
     </nav>
-    <AddUser/>
+   
     <Home/>
     </>
   );
