@@ -28,7 +28,7 @@ const Home = () => {
   };
   return (
     <>
-    <Viewmusaa/>
+    
     <div className="row">
       {users?.map((user) => (
         <div className="col-md-3 card me-3 mt-2 p-0" key={user._id}>

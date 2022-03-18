@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import Home from './Home'
 const AddUser = () => {
   const history = useHistory();
   const [data, setData] = useState({
@@ -23,7 +23,7 @@ const AddUser = () => {
       });
       if (res.ok) {
         setData({ name: "", image: "" });
-        history.replace("/viewmusaa");
+        history.replace("/tareas");
       }
     } catch (error) {
       console.log(error);
@@ -31,6 +31,8 @@ const AddUser = () => {
   };
 
   return (
+    <>
+    
     <div style={{ maxWidth: 500, margin: "auto" }}>
       <div className="mb-3">
         <input
@@ -57,6 +59,8 @@ const AddUser = () => {
         </button>
       </div>
     </div>
+    
+    </>
   );
 };
 
