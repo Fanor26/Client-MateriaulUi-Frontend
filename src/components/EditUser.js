@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import Viewmusaa from '././secundaria/primeros/primeroa/Viewmusaa'
 const EditUser = ({ match }) => {
   console.log(match);
   const history = useHistory();
@@ -39,6 +39,9 @@ const EditUser = ({ match }) => {
   };
 
   return (
+    <>
+    <Viewmusaa/>
+    
     <div style={{ maxWidth: 500, margin: "auto" }}>
       <div className="mb-3">
         <input
@@ -64,6 +67,8 @@ const EditUser = ({ match }) => {
         </button>
       </div>
     </div>
+    
+    </>
   );
 };
 
