@@ -23,7 +23,7 @@ const AddUser = () => {
       });
       if (res.ok) {
         setData({ name: "", image: "" });
-        history.replace("/");
+        history.replace("/tareas");
       }
     } catch (error) {
       console.log(error);
