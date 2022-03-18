@@ -4,7 +4,7 @@ const Images = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
       <div className="container">
-        <Link className="navbar-brand" to="/tareas">
+        <Link className="navbar-brand" to="/viewmusaa">
           IMAGES
         </Link>
         <div>

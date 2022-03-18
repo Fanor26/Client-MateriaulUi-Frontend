@@ -31,7 +31,7 @@ const EditUser = ({ match }) => {
       });
       if (res.ok) {
         setData({ name: "", image: "" });
-        history.replace("/");
+        history.replace("/viewmusaa");
       }
     } catch (error) {
       console.log(error);
