@@ -5,7 +5,7 @@ const Images = () => {
       <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
       <div className="container">
-        <Link className="navbar-brand" to="/viewmusaa">
+        <Link className="navbar-brand" to="/tareas">
           IMAGES
         </Link>
         <div>
