@@ -121,7 +121,7 @@ const Logincas =(props)=>{
   const login = async(e)=>{
   e.preventDefault(); 
   const usuario={correomovil,contrasena}
-   const respuesta = await Axios.post('/cuartoasec/login',usuario); 
+   const respuesta = await Axios.post('http://localhost:5000/cuartoasec/login',usuario); 
     
    console.log(respuesta) 
    

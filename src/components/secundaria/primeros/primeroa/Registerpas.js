@@ -115,13 +115,27 @@ const Registerpas =(props)=>{
   const [tercernombre, setTercernombre] = useState('')
   const [apellidopaterno, setApellidopaterno] = useState('')
   const [apellidomaterno, setApellidomaterno] = useState('')
+ 
     const [correomovil, setCorreomovil] = useState('')
     const [contrasena, setContrasena]= useState('') 
   
   const register = async(e)=>{
   e.preventDefault(); 
-  const usuario={correomovil,contrasena,primernombre,segundonombre,tercernombre,apellidopaterno,apellidomaterno}
-   const respuesta = await Axios.post('/primeroasec/crear',usuario); 
+  const usuario={
+    correomovil,
+    contrasena,
+    primernombre,
+    segundonombre,
+    tercernombre,
+    apellidopaterno,
+    apellidomaterno,
+    
+  
+  }
+//const token =sessionStorage.getItem('token')
+   const respuesta = await Axios.post('http://localhost:4000/primeroasec/crear',usuario,
+   //{headers:{'autorizacion':token}}
+    ); 
     
    console.log(respuesta) 
    

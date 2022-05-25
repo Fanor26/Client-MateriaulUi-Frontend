@@ -1,288 +1,242 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Grid, TextField, Field } from "@material-ui/core";
 
-import React, {useState} from 'react'
-import { Grid,Paper, Avatar, TextField, Typography,Link, Box, } from '@material-ui/core'
-import { withStyles } from '@material-ui/core/styles';
-import { FormGroup} from '@material-ui/core'
-import { createTheme, Button, ThemeProvider} from '@material-ui/core';
-
-import { purple, green, orange, lightBlue } from '@material-ui/core/colors';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import Swal from 'sweetalert2'
-import axios from 'axios'
+import {
+  alpha,
+  ThemeProvider,
+  withStyles,
+  makeStyles,
+  createTheme,
+} from "@material-ui/core/styles";
+import InputBase from "@material-ui/core/InputBase";
+import InputLabel from "@material-ui/core/InputLabel";
+import Swal from "sweetalert2";
+import Axios from "axios";
+import FormControl from "@material-ui/core/FormControl";
 import Viewmusaa from '././secundaria/primeros/primeroa/Viewmusaa'
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'DevFanor@'}
-      
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const BootstrapButton = withStyles({
+const BootstrapInput = withStyles((theme) => ({
   root: {
-    boxShadow: 'none',
-    textTransform: 'none',
+    "label + &": {
+      marginTop: theme.spacing(3),
+    },
+  },
+  input: {
+    borderRadius: 4,
+    position: "relative",
+    backgroundColor: theme.palette.common.white,
+    border: "1px solid #ced4da",
     fontSize: 16,
-    padding: '2px 15px',
-    
-   
-    border: '1px solid',
-    lineHeight: 1.5,
-    backgroundColor: '#ffa420',
-    borderColor: '#ffa420',
+    width: "auto",
+    padding: "10px 190px 6px 10px",
+    transition: theme.transitions.create(["border-color", "box-shadow"]),
+    // Use the system font instead of the default Roboto font.
     fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
+      "-apple-system",
+      "BlinkMacSystemFont",
       '"Segoe UI"',
-      'Roboto',
+      "Roboto",
       '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
+      "Arial",
+      "sans-serif",
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-    ].join(','),
-    '&:hover': {
-      backgroundColor: '#ffa420',
-      borderColor: '#ffa420',
-      boxShadow: 'none',
-    },
-    '&:active': {
-      boxShadow: 'none',
-      backgroundColor: '#ffa420',
-      borderColor: '#ffa420',
-    },
-    '&:focus': {
-      boxShadow: '0 0 0 0.2rem #ffa420',
+    ].join(","),
+    "&:focus": {
+      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
+      borderColor: theme.palette.primary.main,
     },
   },
-})(Button);
+}))(InputBase);
 
- 
-  const BootButton = withStyles({
-    root: {
-      boxShadow: 'none',
-      textTransform: 'none',
-      fontSize: 16,
-      padding: '2px 15px',
-      
-     
-      border: '1px solid',
-      lineHeight: 1.5,
-      backgroundColor: '#654321',
-      borderColor: '#654321',
-      fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(','),
-      '&:hover': {
-        backgroundColor: '#654321',
-        borderColor: '#654321',
-        boxShadow: 'none',
-      },
-      '&:active': {
-        boxShadow: 'none',
-        backgroundColor: '#654321',
-        borderColor: '#654321',
-      },
-      '&:focus': {
-        boxShadow: '0 0 0 0.2rem #654321',
-      },
-    },
-  })(Button);
-  
-  const theme = createTheme({
-    palette: {
-      primary:{
-      main: '#FFFFFF',
-    },
-      
-      secondary: {
-      
-        main: green[500],
-      },
-    },
-  });
-const AddTarea = props =>{
-    const [titulo, setTitulo] = useState("")
-    const [autornombre, setAutornombre]= useState("") 
-    const [tarea, setTarea]= useState("") 
-    const [tareaImage, setFileName]= useState("")
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+  },
+  margin: {
+    margin: theme.spacing(2),
+  },
+}));
 
-    const onChangeFile  = e => {
-      setFileName(e.target.files[0]);
-
-
-    }
-    
-  const entregartarea = async(e)=>{
-  e.preventDefault(); 
-
-  const formData = new FormData();
-  
-  formData.append("titulo", titulo);
-  formData.append("tarea", tarea);
-  formData.append("autornombre", autornombre);
-  formData.append("tareaImage", tareaImage);
-
-  const tareaprimeroas={titulo, autornombre, tarea, tareaImage }
-   const respuesta = await axios.post('/tareas/add/',  formData); 
-    
-   console.log(respuesta) 
-   
-   const mensaje= respuesta.data.mensaje
-  if('Tarea Entregada Correctamente') {
-  
-    Swal.fire({
-        icon:'success',  
-      title: 'Tarea Entregada Correctamente', 
-      showConfirmButton: true,
-      timer: 2500 
-    })
-    window.location.href='/tareas'
+const AddTareaContainer = styled.div`
+  margin: 3rem auto;
+  padding: 2rem;
+  width: 31.25rem;
+  h2 {
+    font-weight: 900;
+    margin: 1rem;
+    color: var(--dark-orange);
   }
-    else{
-  /*
-    const titulo = respuesta.data.titulo
-    const autornombre = respuesta.data.autornombre
-    const tarea = respuesta.data.tarea
+`;
+
+const AddTarea = () => {
+  const classes = useStyles();
+  const [titulo, setTitulo] = useState("");
+  const [tarea, setTarea] = useState("");
+  const [autornombre, setAutornombre] = useState("");
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("");
+  const onChangeImage = (e) => {
+    setImage(e.target.files[0]);
+  };
+
+  const changeOnClick = async (e) => {
+    e.preventDefault();
+
+    const tareas = { 
+      titulo, 
+      tarea, 
+      autornombre,
+      name,
+      image,
+      curso:sessionStorage.getItem('idUsuario'),
+      CursoNombre:sessionStorage.getItem('nombre'), 
+    };
+
+    const formData = new FormData();
+    formData.append("titulo", titulo);
+    formData.append("tarea", tarea);
+    formData.append("autornombre", autornombre);
+    formData.append("name", name);
+    formData.append("image", image);
+    formData.append("curso", sessionStorage.getItem('idUsuario'));
+    formData.append("cursoNombre", sessionStorage.getItem('nombre'));
     
-    const idTareaprimeroas = respuesta.data.id
-  
-    sessionStorage.setItem(' titulo',titulo )
-    sessionStorage.setItem('autornombre',autornombre) 
-    sessionStorage.setItem('tarea',tarea)
-   
+
+
+    setTitulo("");
+    setTarea("");
+    setAutornombre("");
+    setName("");
+    setImage("");
+    const token =sessionStorage.getItem('token')
+
+    const respuesta = await Axios.post("http://localhost:5000/tareas/add", formData,{
+      headers:{'autorizacion':token},
+
+    } 
+    );
+    console.log(respuesta);
+
+    const mensaje = respuesta.data.mensaje;
+
+    if (mensaje !== "Lista de Tareas") {
+      Swal.fire({
+        icon: "success",
+        title: "Tarea Agregada Correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setTimeout(() => {
+        window.location.href = "/evaluacionespas";
+      }, 1600);
+    } else {
+      /*   const token = respuesta.data.token 
+      const titulo = respuesta.data.titulo
+      const tarea = respuesta.data.autornombre
+     
+      const idUsuario = respuesta.data.id
     
-    sessionStorage.setItem('idTareaprimeroas',idTareaprimeroas) */
-     
-     Swal.fire({
-        icon:'error', 
-        title: mensaje, 
-        showConfirmButton: false, 
-        timer: 1500
-     })
-   window.location.href='/tareas'
-    }
-   
-    }
-   
-    const salir= () =>{
+      sessionStorage.setItem(' token',token )
+      sessionStorage.setItem('titulo',titulo)
+       sessionStorage.setItem('tarea',tarea)
+       sessionStorage.setItem('autornombre',autorombre)
+      sessionStorage.setItem('idUsuario',idUsuario) */
 
-      sessionStorage.clear()
-      window.location.href="/tareas"
-    }
-   
-    const paperStyle = { padding: '30px 20px', width: 500, margin: " 10px auto", marginTop:"40px" }
-    const avatarStyle={backgroundColor:'#1bbd7e'}
-    const btnstyle={margin:'8px 0'}
-    const marginTop = { marginTop: 10 }
-    return(
-        <>
-        < Viewmusaa/>
-        <Grid container spacing={2}>
-            <Paper elevation={10} style={paperStyle}>
-            <Box 
-                textAlign="left"
-                p={1}
-                mt={-4}
-                mx={-2}>
-                
-                <IconButton>
-       
-                <CloseIcon onClick={() =>salir()}/> 
-           
-           </IconButton>
-          
-                </Box>
-                <Grid align='center'>
-                    
-                    <h2>ESTADO DE ENTREGA</h2>
-                </Grid>
-                <Grid component="form" novalidate onSubmit={entregartarea} >
-                <Box >
-                <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="autornombre"
-                label="Titulo"
-                name="titulo"
-                autoComplete="titulo"
-                type="text"
-                autoFocus
-                onChange={(e)=>setTitulo(e.target.value)}
-              />
-                 <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="autornombre"
-                label="Autor Nombre"
-                type="text"
-                id="autornombre"
-                
-                onChange={(e)=>setAutornombre(e.target.value)}
-              />
+      Swal.fire({
+        icon: "success",
+        title: "Tarea Agregado Correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
 
-<Typography variant="body2" color="textSecondary" align="center">TAREA
-     
-    </Typography>
-    <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="tarea"
-                label="tarea"
-                type="text"
-                id="tarea"
-                
-                onChange={(e)=>setTarea(e.target.value)}
-              />
-            <div className="form-group">
-              <label htmlForm="file">Elige la Imagen a Subir</label>
-              <input
-              type="file"
-              filename="tareaImage"
-              className="form-control-file"
-              onChange={onChangeFile}
-              
-              />
-              </div>  
+      setTimeout(() => {
+        window.location.href = "/evaluacionespas";
+      }, 1600);
+    }
+  };
+
+  return (
+    <>
+    <Viewmusaa/>
+      <AddTareaContainer>
+        <div className="container">
+          <h2>AGREGAR NUEVA TAREA</h2>
+          <form onSubmit={changeOnClick} encType="multipart/form-data">
+          <Grid className={classes.margin}>
+              <InputLabel
+                shrink
+                htmlFor="bootstrap-input"
+                className={classes.margin}
+              >
+                Elija archivo para Subir
+              </InputLabel>
+              <input type="file" required name="image" onChange={onChangeImage} />
+            </Grid>
             
-                <ThemeProvider theme={theme}>
-                <BootstrapButton type='submit'  color="primary"  style={btnstyle} fullWidth  >AGREGAR ENTREGA
-              
-                    </BootstrapButton> 
-                     
-                   
-                </ThemeProvider>
-                </Box>
-                    </Grid>
-                    <Grid align="center" >
+            <FormControl className={classes.margin}>
+              <InputLabel shrink htmlFor="bootstrap-input">
+                Titulo
+              </InputLabel>
+              <BootstrapInput
+                onChange={(e) => setTitulo(e.target.value)}
+                required
+                placeholder="Título"
+                id="bootstrap-input"
+              />
+            </FormControl>
+            <FormControl className={classes.margin}>
+              <InputLabel shrink htmlFor="bootstrap-input">
+                Autor 
+              </InputLabel>
+              <BootstrapInput
+                onChange={(e) => setAutornombre(e.target.value)}
+                required
+                placeholder="Autor"
+                id="bootstrap-input"
+              />
+            </FormControl>
+{/*
+            <InputLabel
+              shrink
+              htmlFor="bootstrap-input"
+              className={classes.margin}
+            >
+              Tarea
+            </InputLabel>
+            <Grid className={classes.margin}>
+              <TextField
+                onChange={(e) => setTarea(e.target.value)}
+                variant="outlined"
+                rows={4}
+                fullWidth
                 
-                
-                </Grid> 
-                    <Box mt={5}>
-        <Copyright />
-      </Box>  
-            </Paper>
+                multiline
+                placeholder="Título"
+              />
+  </Grid>
+            <FormControl className={classes.margin}>
+              <InputLabel shrink htmlFor="bootstrap-input">
+                Titulo
+              </InputLabel>
+              <BootstrapInput
+                onChange={(e) => setName(e.target.value)}
+                required
+                placeholder="Nombre Image"
+                id="bootstrap-input"
+              />
+            </FormControl>*/}
             
-        </Grid>
-        </>
-    )
-}
 
-export default AddTarea
+            <button type="submit" className="btn btn-primary">
+              ENTREGAR
+            </button>
+          </form>
+        </div>
+      </AddTareaContainer>
+    </>
+  );
+};
+
+export default AddTarea;

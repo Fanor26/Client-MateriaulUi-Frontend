@@ -39,7 +39,7 @@ const Cajon = (props) => {
       <Hidden only={["md", "lg"]}>
         <Drawer
           className={classes.drawer}
-          variant="permanent"
+        
           classes={{
             paper: classes.drawerPaper,
           }}

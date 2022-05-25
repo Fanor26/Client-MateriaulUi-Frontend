@@ -4,10 +4,11 @@ import '../../App.css';
 
 const BookCard = (props) => {
     const  book  = props.book;
+    const user =props.user;
 
     return(
         <div className="card-container">
-            <img src="https://commapress.co.uk/books/the-book-of-cairo/cairo-provisional-v3/image%2Fspan3" alt="" />
+            <img src="https://i.pinimg.com/originals/9e/5d/55/9e5d554cd5bb44d06077ff495055768a.jpg" alt="" width={"100%"} height={400}/>
             <div className="desc">
                 <h2>
                     <Link to={`/show-book/${book._id}`}>

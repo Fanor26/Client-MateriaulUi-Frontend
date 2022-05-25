@@ -19,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     marginTop: "10px",
   },
+  h6:{
+    fontWeight: 900,
+    margin: "5px",
+
+  },
 }));
 const ButtonCuentaE = () => {
   const [open, setOpen] = React.useState(false);
@@ -44,8 +49,10 @@ const ButtonCuentaE = () => {
 
   return (
     <>
-      <Button color="default" onClick={handleToggle} ref={anchorRef} >
-      {sessionStorage.getItem('primernombre')}
+      <Button color="default" className={classes.h6} onClick={handleToggle} ref={anchorRef} >
+      
+    <h6 className={classes.h6}>{sessionStorage.getItem('primernombre')}</h6>  
+     
         <ArrowDropDownIcon />
       </Button>
 

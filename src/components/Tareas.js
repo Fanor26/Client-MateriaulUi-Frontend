@@ -1,106 +1,140 @@
-import React, {useState} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import {Grid,Paper, Button} from '@material-ui/core';
-import Viewmusaa from '././secundaria/primeros/primeroa/Viewmusaa'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Grid, Paper, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import Viewmusaa from "././secundaria/primeros/primeroa/Viewmusaa";
+/*const [posts,setPosts]=useState([])
 
-import {Link} from 'react-router-dom'
-import axios from 'axios'
-import Swal from 'sweetalert2'
-const useStyles = makeStyles((theme) => ({
+useEffect(() => {
+  axios
+  .get('http://localhost:5000/tareas')
+  .then(res =>setPosts(res.data))
+  .catch(error => console.log(error));
+
+});
+*/
+const useStyles = makeStyles(() => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(-2),
-      marginTop: theme.spacing(2),
-      width: theme.spacing(160),
-      
-    },
+    flexGrow: 1,
+  },
+  iconos: {
+    color: "white",
+  },
+  container: {
+    paddingTop: "10px",
+    alignItems: "center",
+  },
+
+  containerGrafica: {
+    marginTop: "40px",
+  },
+  containerTabla: {
+    marginTop: "40px",
   },
 }));
-const agregartarea = () => {
-  
-  window.location.href='/addtarea'
-   }
-const Tareas =({posts}) => {
+
+const Tareas = (props) => {
   const classes = useStyles();
-  const [tarea, setTarea]= useState("");
+  const [posts, setPosts] = useState([]);
+  const [tareas, setTareas] = useState();
 
-  const deleteTarea = id => {
-
-    axios.delete(`/tareas/${id}`)
-
+/*
+  useEffect(() => {
     
-      
-      
-  if('Tarea eliminada Correctamente') {
+    axios
+      .get("http://localhost:5000/tareas")
+      .then((res) => setPosts(res.data))
+      .catch((error) => console.log(error));
+  });*/
+  useEffect(() => {
+    const id=  sessionStorage.getItem("idUsuario")
+      const token=  sessionStorage.getItem("token")
+    axios
+      .get("http://localhost:5000/tareas/listarTareasEstudiante/"+id,{
+        headers:{'autorizacion':token}
+      })
+      .then((res) => setPosts(res.data))
+      .catch((error) => console.log(error));
+  });
   
-    Swal.fire({
-        icon:'success',  
-      title: 'Tarea eliminada Correctamente', 
-      showConfirmButton: true,
-      timer: 2500 
-    })
-    window.location.href='/tareas'
-    setTarea(tarea.filter(elem => elem._id !== id));
-  }
-   
-}
-      
-      
-      
-   
 
+  const deleteTarea = async (id) => {
+    try {
+      const token=  sessionStorage.getItem("token")
+      const res = await fetch(`http://localhost:5000/tareas/${id}`, {
+        method: "DELETE",
+        headers:{'autorizacion':token}
+      });
+      if (res.ok) {
+        const updatedTareas = tareas.filter((tarea) => tarea._id !== id);
+        setTareas(updatedTareas);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-      <>
+    <>
       <Viewmusaa />
-    <div className={classes.root}>
-      
-      <Paper elevation={3} >
-      TAREAS
-      <Grid align="right" > <Button  onClick={() =>agregartarea()}
+      <div className={classes.root}>
+        <Grid container spacing={2} className={classes.container}>
+          <Grid item xs={12}>
+            <div style={{ position: "center" }}>
+              <Link
+                to="/addtarea"
+                className="btn btn-outline-warning float-center my-2 "
+              >
+                + Aregar Nueva Tarea
+              </Link>
+            </div>
+          </Grid>
+          {posts.map((tarea, key) => (
+            <Grid item xs={12} sm={4} md={4} lg={4} xl={4} key={key}>
+              <Link
+                to={{
+                  pathname: `/tarea/${tarea._id}`,
+                }}
+              >
+                <h2>{tarea.titulo}</h2>
+              </Link>
 
-color="secondary" variant="contained">Agregar Tarea</Button></Grid>
-     
-      {posts.map((tarea, key) =>(
-        <Grid align="center" item xs={12} key={key}>
-            <div>
-              <img src={`/uploads/${tarea.tareaImage}`} alt="..." />
-         <Link
-         to={{
-           pathname: `/tarea/${tarea._id}`
+              <Paper elevation={10}>
+                <img src={tarea.avatar} alt="" width={"100%"} height={500} />
+                <div className="p-2">
+                  <h3>{tarea.name}</h3>
+                </div>
+                <h2>{tarea.titulo}</h2>
+                <p>{tarea.tarea}</p>
+             
+                <span>{tarea.autornombre}</span>
+                <div className="d-flex justify-content-between align-items-center row">
+                  <Grid item xs={12} spacing={2}>
+                    <div className="m-2">
+                      <Link
+                        to={{
+                          pathname: `/update/${tarea._id}`}}
+                        className="btn btn-outline-success m-2"
+                      >
+                        Modificar
+                      </Link>
 
-         }}
-         >
-         <h2>{tarea.titulo}</h2>
-         </Link>  
-     
-      
-      <h4>{tarea.autornombre}</h4>
-      <Grid align="left"  >
-      <span className="badge badge-primary p-2">{tarea.tarea}</span> </Grid>
-      <div className="row my-5">
-           
-           <div className="col-sm-2">
-             <Link  to={`/update/${tarea._id}`}
-             
-             
-             className="btn btn-outline-success">Editar Tarea </Link>
+                      <button
+                        onClick={() => deleteTarea(tarea._id)}
+                        className="btn btn-outline-danger align-items-center"
+                      >
+                        Eliminar
+                      </button>
+                    </div>
+                  </Grid>
+                </div>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
       </div>
-      <div className="col-sm-2">
-             <a onClick={() => deleteTarea(tarea._id)} className="btn btn-outline-danger">Eliminar Tarea </a>
-      </div>
-      </div> </div>
-      </Grid>
-      
-      
-      ))}
-      
-          </Paper>
-    </div>
     </>
   );
-}
-export default Tareas;
+};
 
-//Main Container
+export default Tareas;

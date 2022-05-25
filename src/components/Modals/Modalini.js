@@ -130,7 +130,7 @@ const Modalini = () =>{
        
         <DialogActions>
         
-        <BootstrapButton variant="contained" href="#" color="primary"
+        <BootstrapButton variant="contained" href="login" color="primary"
 style={{ color: '#fff'}}>
         CONTINUAR
                    </BootstrapButton>

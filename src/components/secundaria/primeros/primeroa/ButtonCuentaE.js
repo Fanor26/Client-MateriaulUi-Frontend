@@ -19,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     marginTop: "10px",
   },
+  h6:{
+    fontWeight: 900,
+    margin: "5px",
+
+  },
 }));
 const ButtonCuentaE = () => {
   const [open, setOpen] = React.useState(false);
@@ -35,6 +40,11 @@ const ButtonCuentaE = () => {
 
     setOpen(false);
   };
+  const perfilpas= (props) =>{
+
+    sessionStorage.clear()
+    window.location.href=`/perfilpas`
+  }
   const salir= () =>{
 
     sessionStorage.clear()
@@ -45,7 +55,7 @@ const ButtonCuentaE = () => {
   return (
     <>
       <Button color="default" onClick={handleToggle} ref={anchorRef} >
-      {sessionStorage.getItem('primernombre')}
+     <h6 className={classes.h6}>{sessionStorage.getItem('primernombre')}</h6> 
         <ArrowDropDownIcon />
       </Button>
 
@@ -57,12 +67,11 @@ const ButtonCuentaE = () => {
               color="contained"
               variant="contained"
             >
-              <Button variant="text">
-                <Link to="/dashboardpas" style={{ color: "#000000" }}>
-                  {" "}
-                  Perfil
-                </Link>
-              </Button>
+            <Button variant="text" onClick={() =>perfilpas()}>
+                
+                Perfil
+              
+            </Button>
              
               <Button variant="text">
                 <Link to="/" style={{ color: "#000000" }}>
@@ -75,6 +84,7 @@ const ButtonCuentaE = () => {
                   Cerrar Sesion
                 
               </Button>
+              
             </ButtonGroup>
           </ClickAwayListener>
         </Paper>

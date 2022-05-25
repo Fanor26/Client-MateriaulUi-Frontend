@@ -1,276 +1,249 @@
-
-import React, {useState, useEffect} from 'react'
-import { Grid,Paper, Avatar, TextField, Typography,Link, Box } from '@material-ui/core'
-import { withStyles } from '@material-ui/core/styles';
-import { createTheme, Button, ThemeProvider} from '@material-ui/core';
-
-import { purple, green, orange, lightBlue } from '@material-ui/core/colors';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import Swal from 'sweetalert2'
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { Grid, TextField, Field } from "@material-ui/core";
 import axios from 'axios'
-import Viewmusaa from '././secundaria/primeros/primeroa/Viewmusaa'
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'DevFanor@'}
-      
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const BootstrapButton = withStyles({
+import {
+  alpha,
+  ThemeProvider,
+  withStyles,
+  makeStyles,
+  createTheme,
+} from "@material-ui/core/styles";
+import InputBase from "@material-ui/core/InputBase";
+import InputLabel from "@material-ui/core/InputLabel";
+import Swal from "sweetalert2";
+import Axios from "axios";
+import FormControl from "@material-ui/core/FormControl";
+const BootstrapInput = withStyles((theme) => ({
   root: {
-    boxShadow: 'none',
-    textTransform: 'none',
+    "label + &": {
+      marginTop: theme.spacing(3),
+    },
+  },
+  input: {
+    borderRadius: 4,
+    position: "relative",
+    backgroundColor: theme.palette.common.white,
+    border: "1px solid #ced4da",
     fontSize: 16,
-    padding: '2px 15px',
-    
-   
-    border: '1px solid',
-    lineHeight: 1.5,
-    backgroundColor: '#ffa420',
-    borderColor: '#ffa420',
+    width: "auto",
+    padding: "10px 190px 6px 10px",
+    transition: theme.transitions.create(["border-color", "box-shadow"]),
+    // Use the system font instead of the default Roboto font.
     fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
+      "-apple-system",
+      "BlinkMacSystemFont",
       '"Segoe UI"',
-      'Roboto',
+      "Roboto",
       '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
+      "Arial",
+      "sans-serif",
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-    ].join(','),
-    '&:hover': {
-      backgroundColor: '#ffa420',
-      borderColor: '#ffa420',
-      boxShadow: 'none',
-    },
-    '&:active': {
-      boxShadow: 'none',
-      backgroundColor: '#ffa420',
-      borderColor: '#ffa420',
-    },
-    '&:focus': {
-      boxShadow: '0 0 0 0.2rem #ffa420',
+    ].join(","),
+    "&:focus": {
+      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
+      borderColor: theme.palette.primary.main,
     },
   },
-})(Button);
+}))(InputBase);
 
- 
-  const BootButton = withStyles({
-    root: {
-      boxShadow: 'none',
-      textTransform: 'none',
-      fontSize: 16,
-      padding: '2px 15px',
-      
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+  },
+  margin: {
+    margin: theme.spacing(2),
+  },
+}));
+
+const AddTareaContainer = styled.div`
+  margin: 3rem auto;
+  padding: 2rem;
+  width: 31.25rem;
+  h2 {
+    font-weight: 900;
+    margin: 1rem;
+    color: var(--dark-orange);
+  }
+`;
+
+const EditTarea = (props) => {
+  const classes = useStyles();
+  const [titulo, setTitulo] = useState("");
+  const [tarea, setTarea] = useState("");
+  const [autornombre, setAutornombre] = useState("");
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("");
+  const [cloudinary_id, setCloudinary_id] = useState("");
+  const onChangeImage = (e) => {
+    setImage(e.target.files[0]);
+  };
+
+  const changeOnClick = async (e) => {
+    e.preventDefault();
+
+    const tareas = { titulo, tarea, autornombre };
+
+
+    const formData = new FormData();
+    formData.append("titulo", titulo);
+    formData.append("tarea", tarea);
+    formData.append("autornombre", autornombre);
+    formData.append("name", name);
+    formData.append("image", image);
+    formData.append("cloudinary_id", cloudinary_id);
+
+    setTitulo("");
+    setTarea("");
+    setAutornombre("");
+    setName("");
+    setImage("");
+    
+    const respuesta = await axios.put(`http://localhost:5000/tareas/update/${props.match.params.id}`,formData,
+    
+    );
+    console.log(respuesta);
+
+    const mensaje = respuesta.data.mensaje;
+
+    if (mensaje !== "Lista de Tareas") {
+      Swal.fire({
+        icon: "success",
+        title: "Tarea Actulizada  Correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setTimeout(() => {
+        window.location.href = "/evaluacionespas";
+      }, 1600);
+    } else {
+      /*   const token = respuesta.data.token 
+      const titulo = respuesta.data.titulo
+      const tarea = respuesta.data.autornombre
      
-      border: '1px solid',
-      lineHeight: 1.5,
-      backgroundColor: '#654321',
-      borderColor: '#654321',
-      fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(','),
-      '&:hover': {
-        backgroundColor: '#654321',
-        borderColor: '#654321',
-        boxShadow: 'none',
-      },
-      '&:active': {
-        boxShadow: 'none',
-        backgroundColor: '#654321',
-        borderColor: '#654321',
-      },
-      '&:focus': {
-        boxShadow: '0 0 0 0.2rem #654321',
-      },
-    },
-  })(Button);
-  
-  const theme = createTheme({
-    palette: {
-      primary:{
-      main: '#FFFFFF',
-    },
-      
-      secondary: {
-      
-        main: green[500],
-      },
-    },
-  });
-const EditTarea = props =>{
-    const [titulo, setTitulo] = useState('')
-    const [autornombre, setAutornombre]= useState('') 
-    const [tarea, setTarea]= useState('') 
-
-  const entregartarea = async(e)=>{
-  e.preventDefault(); 
-  const tareaprimeroas={titulo, autornombre, tarea}
-   const respuesta = await axios.put(`/tareas/update/${props.match.params.id}`,tareaprimeroas); 
+      const idUsuario = respuesta.data.id
     
-   console.log(respuesta) 
-   
-   const mensaje= respuesta.data.mensaje
-  if('Tarea actualizada Correctamente') {
-  
-    Swal.fire({
-        icon:'success',  
-      title: 'Tarea actualizada Correctamente', 
-      showConfirmButton: true,
-      timer: 2500 
-    })
-    window.location.href='/tareas'
-  
-   
-}
+      sessionStorage.setItem(' token',token )
+      sessionStorage.setItem('titulo',titulo)
+       sessionStorage.setItem('tarea',tarea)
+       sessionStorage.setItem('autornombre',autorombre)
+      sessionStorage.setItem('idUsuario',idUsuario) */
 
-    else{
-  /*
-    const titulo = respuesta.data.titulo
-    const autornombre = respuesta.data.autornombre
-    const tarea = respuesta.data.tarea
-    
-    const idTareaprimeroas = respuesta.data.id
+      Swal.fire({
+        icon: "success",
+        title: "Tarea Actualizado Correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      setTimeout(() => {
+        window.location.href = "/evaluacionespas";
+      }, 1600);
+    }
+  };
   
-    sessionStorage.setItem(' titulo',titulo )
-    sessionStorage.setItem('autornombre',autornombre) 
-    sessionStorage.setItem('tarea',tarea)
-   
-    
-    sessionStorage.setItem('idTareaprimeroas',idTareaprimeroas) */
-     
-     Swal.fire({
-        icon:'error', 
-        title: mensaje, 
-        showConfirmButton: false, 
-        timer: 1500
-     })
-   window.location.href='/tareas'
-    }
-    }
-    const salir= () =>{
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/tareas/${props.match.params.id}`)
+      .then((res) => [
+        setTitulo(res.data.titulo),
+        setTarea(res.data.tarea),
+        setAutornombre(res.data.autornombre),
+        setName(res.data.name),
+        setImage(res.data.image),
+        setCloudinary_id(res.data.cloudinary_id),
+      ])
+      .catch((error) => console.log(error));
+  }, [`${props.match.params.id}`]);
 
-      sessionStorage.clear()
-      window.location.href="/tareas"
-    }
-    useEffect(()=>{
-        axios
-        .get(`https://juanor902.herokuapp.com/tareas/${props.match.params.id}`)
-        .then(res =>[
-            setTitulo(res.data.titulo),
-            setTarea(res.data.tarea),
-            setAutornombre(res.data.autornombre)
 
-        ])
-        .catch(error => console.log(error))
-   
-        }, []);
-    const paperStyle = { padding: '30px 20px', width: 500, margin: " 10px auto", marginTop:"40px" }
-    const avatarStyle={backgroundColor:'#1bbd7e'}
-    const btnstyle={margin:'8px 0'}
-    const marginTop = { marginTop: 10 }
-    return(
-        <>
-        < Viewmusaa/>
-        <Grid container spacing={2}>
-            <Paper elevation={10} style={paperStyle}>
-            <Box 
-                textAlign="left"
-                p={1}
-                mt={-4}
-                mx={-2}>
-                
-                <IconButton>
-       
-                <CloseIcon onClick={() =>salir()}/> 
-           
-           </IconButton>
-          
-                </Box>
-                <Grid align='center'>
-                    
-                    <h2>MODIFICAR ENTREGA</h2>
-                </Grid>
-                <Grid component="form" novalidate onSubmit={entregartarea} >
-                <Box >
-                <TextField
-                margin="normal"
+  return (
+    <>
+      <AddTareaContainer>
+        <div className="container">
+          <h2>ACTUALIZAR TAREA</h2>
+          <form onSubmit={changeOnClick} encType="multipart/form-data">
+          <FormControl className={classes.margin}>
+              <InputLabel shrink htmlFor="bootstrap-input">
+                Titulo
+              </InputLabel>
+              <BootstrapInput
+                onChange={(e) => setTitulo(e.target.value)}
                 required
-                fullWidth
-                id="titulo"
-                label="Titulo"
                 value={titulo}
-                autoComplete="titulo"
-                type="text"
-                autoFocus
-                onChange={(e)=>setTitulo(e.target.value)}
+                placeholder="Título"
+                id="bootstrap-input"
               />
-                 <TextField
-                margin="normal"
+            </FormControl>
+            <FormControl className={classes.margin}>
+              <InputLabel shrink htmlFor="bootstrap-input">
+                Autor
+              </InputLabel>
+              <BootstrapInput
+                onChange={(e) => setAutornombre(e.target.value)}
                 required
-                fullWidth
-                id="n°tarea"
-                label="Nombre Tarea"
                 value={autornombre}
-                autoComplete="titulo"
-                type="text"
-                autoFocus
-                onChange={(e)=>setAutornombre(e.target.value)}
+                placeholder="Autor"
+                id="bootstrap-input"
               />
-
-<Typography variant="body2" color="textSecondary" align="center">TAREA
-     
-    </Typography>
-    <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="n°tarea"
-                label="N° Tarea"
-                value={tarea}
-                autoComplete="titulo"
-                type="text"
-                autoFocus
-                
-                onChange={(e)=>setTarea(e.target.value)}
-              />
-                <ThemeProvider theme={theme}>
-                <BootstrapButton type='submit'  color="primary"  style={btnstyle} fullWidth  >ACTUALIZAR ENTREGA
-              
-                    </BootstrapButton> 
-                     
-                   
-                </ThemeProvider>
-                </Box>
-                    </Grid>
-                    <Grid align="center" >
-                
-                
-                </Grid> 
-                    <Box mt={5}>
-        <Copyright />
-      </Box>  
-            </Paper>
+            </FormControl>
             
-        </Grid>
-        </>
-    )
-}
+            {/*
+            <InputLabel
+              shrink
+              htmlFor="bootstrap-input"
+              className={classes.margin}
+            >
+              Tarea
+            </InputLabel>
+            <Grid className={classes.margin}>
+              <TextField
+              value={tarea}
+                onChange={(e) => setTarea(e.target.value)}
+                variant="outlined"
+                rows={4}
+                fullWidth
+                
+                multiline
+                placeholder="Descripcion"
+              />
+  </Grid>  */}
+           
+            <FormControl className={classes.margin}>
+              <InputLabel shrink htmlFor="bootstrap-input">
+                Nombre Archivo
+              </InputLabel>
+              <BootstrapInput
+                onChange={(e) => setCloudinary_id(e.target.value)}
+                required
+                value={cloudinary_id}
+                placeholder="Nombre Imagn"
+                id="bootstrap-input"
+              />
+            </FormControl>
+            <Grid className={classes.margin}>
+              <InputLabel
+                shrink
+                htmlFor="bootstrap-input"
+                className={classes.margin}
+              >
+                Elija archivo para Subir
+              </InputLabel>
+              <input type="file" filename="image"  required className="form-control-file" onChange={onChangeImage} />
+            </Grid>
 
-export default EditTarea
+            <button type="submit"  required className="btn btn-primary">
+              ACTUALIZAR
+            </button>
+          </form>
+        </div>
+      </AddTareaContainer>
+    </>
+  );
+};
+
+export default EditTarea;
+
+  

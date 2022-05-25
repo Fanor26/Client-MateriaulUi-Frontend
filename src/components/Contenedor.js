@@ -41,7 +41,7 @@ const Contenedor = () => {
         <div className={classes.toolbar}></div>
         <Grid item xs={12} spacing={2}>
         
-          <Box bgcolor="primary.main" p={1} mx={-2} my={-2} textAlign="left">
+          <Box bgcolor="primary.main" p={1} mx={-4} my={-1} textAlign="left">
             <Button>
               <AccountBalanceSharpIcon />{" "}
               <Box mx={1} my={1}>

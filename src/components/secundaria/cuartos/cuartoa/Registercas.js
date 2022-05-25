@@ -122,7 +122,7 @@ const Registercas =(props)=>{
   const register = async(e)=>{
   e.preventDefault(); 
   const usuario={correomovil,contrasena,primernombre,segundonombre,tercernombre,apellidopaterno,apellidomaterno}
-   const respuesta = await Axios.post('/cuartoasec/crear',usuario); 
+   const respuesta = await Axios.post('http://localhost:5000/cuartoasec/crear',usuario); 
     
    console.log(respuesta) 
    

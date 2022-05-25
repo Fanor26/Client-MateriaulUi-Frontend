@@ -86,7 +86,7 @@ const Cajonpas = (props) => {
       
       <Drawer
         className={classes.drawer}
-        variant="permanent"
+        
         classes={{
           paper: classes.drawerPaper,
         }}

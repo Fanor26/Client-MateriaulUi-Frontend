@@ -79,19 +79,34 @@ const regresarprincipal = () => {
   
   window.location.href='/dashboardpas'
    }
+   const estudiantespas = () => {
+  
+    window.location.href='/estudiantespas'
+     }
    const tareaspas = () => {
   
     window.location.href='/tareas'
      }
      const asistenciapas = () => {
   
-      window.location.href='/asistencia'
+      window.location.href='/asis'
        }
+
+       const evaluacionespas = () => {
+  
+        window.location.href='/evaluacionespas'
+         }
+         const practicas = () => {
+  
+          window.location.href='/practicas'
+           }
 
    const mus = () => {
   
     window.location.href='/viewmusaa'
      }
+
+
 const Cajonmus = (props) => {
   const classes = estilos();
 
@@ -99,17 +114,16 @@ const Cajonmus = (props) => {
     <div className={classes.root}>
       
       <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-        anchor="left"
-        variant={props.variant}
-        open={props.open}
-        onClose={props.onClose ? props.onClose : null}
-      >
-       
+       className={classes.drawer}
+        
+       classes={{
+         paper: classes.drawerPaper,
+       }}
+       anchor="left"
+       variant={props.variant}
+       open={props.open}
+       onClose={props.onClose ? props.onClose : null}
+     >
         <Toolbar>
           
             <IconButton edge="start" onClick={props.onClose} color="contained">
@@ -122,12 +136,12 @@ const Cajonmus = (props) => {
         
         <Divider />
         <BootstrapButton onClick={() =>regresarprincipal()}  variant="contained" color="secondary">PRINCIPAL</BootstrapButton>
-       
+        <BootstrapButton onClick={() =>estudiantespas()}   variant="contained" color="primary">ESTUDIANTES</BootstrapButton>
         <BootstrapButton href="#"   variant="contained" color="primary">TEMAS</BootstrapButton>
         <BootstrapButton onClick={() =>tareaspas()} variant="contained" color="primary" >TAREAS</BootstrapButton>
         <BootstrapButton onClick={() =>asistenciapas()}  variant="contained" color="primary">ASISTENCIA</BootstrapButton>
-        <BootstrapButton href="#"   variant="contained" color="primary"> EVALUACIONES</BootstrapButton>
-     
+        <BootstrapButton onClick={() =>evaluacionespas()}   variant="contained" color="primary"> EVALUACIONES</BootstrapButton>
+        <BootstrapButton onClick={() =>practicas()}   variant="contained" color="primary"> PRACTICAS</BootstrapButton>
       </Drawer>
       
     </div>

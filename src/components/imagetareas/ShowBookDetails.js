@@ -92,7 +92,7 @@ class showBookDetails extends Component {
           <div className="row">
             <div className="col-md-10 m-auto">
               <br /> <br />
-              <Link to="/" className="btn btn-outline-warning float-left">
+              <Link to="/asistenciapas" className="btn btn-outline-warning float-left">
                   Show Book List
               </Link>
             </div>

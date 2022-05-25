@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import styled from "styled-components";
 
 const estilos = makeStyles((theme) => ({
   root: {
@@ -15,6 +15,11 @@ const estilos = makeStyles((theme) => ({
   
   title: {
     flexGrow: 1,
+  },
+  h6:{
+    fontWeight: 900,
+    margin: "5px",
+
   },
 }));
 const salir= () =>{
@@ -43,11 +48,12 @@ const Sidevarcas = (props) => {
         >
           <MenuIcon />
         </IconButton>
+       
         <Typography variant="h8" className={classes.title}>
-          <Button> CUARTO A SECUNDARIA</Button>
+          <h6 className={classes.h6}> CUARTO A SECUNDARIA</h6>
           
         </Typography>
-        
+       
         <ButtonCuentaE />
        
       </Toolbar>

@@ -119,7 +119,7 @@ const Loginpas =(props)=>{
   const login = async(e)=>{
   e.preventDefault(); 
   const usuario={correomovil,contrasena}
-   const respuesta = await Axios.post('/primeroasec/login',usuario); 
+   const respuesta = await Axios.post('http://localhost:4000/primeroasec/login',usuario); 
     
    console.log(respuesta) 
    

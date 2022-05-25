@@ -58,7 +58,7 @@ class CreateBook extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <br />
-              <Link to="/" className="btn btn-outline-warning float-left">
+              <Link to="/asistenciapas" className="btn btn-outline-warning float-left">
                   Show BooK List
               </Link>
             </div>
