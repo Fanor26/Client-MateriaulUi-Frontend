@@ -133,7 +133,7 @@ const Registerpas =(props)=>{
   
   }
 //const token =sessionStorage.getItem('token')
-   const respuesta = await Axios.post('http://localhost:4000/primeroasec/crear',usuario,
+   const respuesta = await Axios.post('http://localhost:5000/primeroasec/crear',usuario,
    //{headers:{'autorizacion':token}}
     ); 
     
