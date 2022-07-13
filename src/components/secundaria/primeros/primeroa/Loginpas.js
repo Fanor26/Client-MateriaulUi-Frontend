@@ -113,13 +113,13 @@ const BootstrapButton = withStyles({
     },
   });
 const Loginpas =(props)=>{
-    const [correomovil, setCorreomovil] = useState('')
+    const [email, setEmail] = useState('')
     const [contrasena, setContrasena]= useState('') 
   
   const login = async(e)=>{
   e.preventDefault(); 
-  const usuario={correomovil,contrasena}
-   const respuesta = await Axios.post('http://localhost:5000/primeroasec/login',usuario); 
+  const user={email,contrasena}
+   const respuesta = await Axios.post('http://localhost:5000/server/autenthication/login',user); 
     
    console.log(respuesta) 
    
@@ -136,19 +136,13 @@ const Loginpas =(props)=>{
     else{
   
     const token = respuesta.data.token 
-    const primernombre = respuesta.data.primernombre
-    const segundonombre = respuesta.data.segundonombre
-    const tercernombre = respuesta.data.tercernombre
-    const apellidopaterno = respuesta.data.apellidopaterno
-    const apellidomaterno = respuesta.data.apellidomaterno
+    const nombre = respuesta.data.nombre
+
     const idUsuario = respuesta.data.id
   
     sessionStorage.setItem(' token',token )
-    sessionStorage.setItem('primernombre',primernombre) 
-    sessionStorage.setItem('segundonombre',segundonombre)
-    sessionStorage.setItem('tercernombre',tercernombre)
-    sessionStorage.setItem('apellidopaterno',apellidopaterno)
-    sessionStorage.setItem('apellidomaterno',apellidomaterno)
+    sessionStorage.setItem('nombre',nombre) 
+  
     sessionStorage.setItem('idUsuario',idUsuario) 
      
      Swal.fire({
@@ -207,7 +201,7 @@ const Loginpas =(props)=>{
                 name="email"
                 autoComplete="email"
                 autoFocus
-                onChange={(e)=>setCorreomovil(e.target.value)}
+                onChange={(e)=>setEmail(e.target.value)}
               />
                  <TextField
                 margin="normal"

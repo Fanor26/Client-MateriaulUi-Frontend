@@ -30,7 +30,7 @@ const Contenedor = () => {
       <Navbbr accionAbrir={accionAbrir} />
 
       <Hidden xlDown>
-        <Cajon variant="permanent" open={true} />
+        <Cajon variant="permanent" open={false} />
       </Hidden>
 
       <Hidden xlUp>
